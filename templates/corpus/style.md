@@ -1,6 +1,6 @@
 # Translation corpus: style
 
-How other translators have handled the author's prose. One heading per source; one short example (at most fifteen words) with source ID, page and URL for each point.
+How other translators have handled the author's prose. One heading per source; one short example (at most fifteen words) with source ID, page, and URL or DOI for each point.
 
 ## [source ID]
 - Sentence length and joining:

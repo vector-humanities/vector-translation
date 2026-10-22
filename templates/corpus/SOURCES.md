@@ -6,7 +6,7 @@ For [author, title]. Full texts are held in `corpus/texts/` of the private repos
 |---|---|---|---|---|---|---|---|---|
 | | | | translation of the work / other work / circle / scholarship / quoted source | | | | | |
 
-Every entry in the corpus cites one of these IDs and a page, and a URL to the page where one exists, so that each can be checked against the original after `corpus/texts/` is removed.
+Every entry in the corpus cites one of these IDs and a page, and a URL or DOI (with page) where one exists, so that each can be checked against the original after `corpus/texts/` is removed.
 
 ## Searched, not found
 Searches that found nothing, with where and when, so they are not repeated.

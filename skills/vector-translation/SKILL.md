@@ -13,7 +13,7 @@ You are the coordinator. The human translator directs; you survey, brief, launch
 - **Check after every write**, your own included: `tools/vt_check.py`.
 - **Literal is the master.** The readable version adds nothing absent from the literal except marked glosses and insertions.
 - **Never fabricate** citations, dates, pages or identifications. Delete what cannot be verified.
-- **Cite back to the original.** Every note, find or record that depends on a source gives its citation and page, and a URL where one exists.
+- **Cite back to the original.** Every note, find or record that depends on a source gives its citation and page, and a URL or DOI where one exists.
 - **Persist as you go.** Every agent appends each finished section to its file.
 - **Nothing private in the repository**: no working log, correspondence, emails, local paths, third-party scholarship.
 - **Rights before anything else.** Do not begin translating until the rights status is recorded and the translator has confirmed the text can be translated and published as intended.

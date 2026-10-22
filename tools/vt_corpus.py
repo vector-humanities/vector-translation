@@ -8,7 +8,7 @@ Each input has the columns of templates/corpus/terms.csv:
 source_term,rendering,translator,work,year,language,page,context,note,source_id,url
 
 Every entry needs a source ID and a page, so that it can be checked against
-the original; the URL is reported when missing. The merged table drops exact duplicate rows. The report lists, for each source
+the original; a missing URL or DOI is reported. The merged table drops exact duplicate rows. The report lists, for each source
 term, every rendering with the number of entries and the works that use it.
 With --glossary, it also shows the glossary's agreed rendering for the term and
 the attested renderings not yet listed among its competitors. Contexts longer
@@ -43,7 +43,7 @@ def read(paths):
                 if not row["source_id"]:
                     problems.append(f"{p}:{i}: no source ID")
                 if not row["url"]:
-                    problems.append(f"{p}:{i}: no URL (give one where it exists)")
+                    problems.append(f"{p}:{i}: no URL or DOI (give one where it exists)")
                 if len(row["context"].split()) > 15:
                     problems.append(f"{p}:{i}: context over fifteen words")
                 key = tuple(row[c] for c in COLS)
