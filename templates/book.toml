@@ -4,7 +4,7 @@
 title = "Title of the Book"
 author = "Author"
 original-title = ""          # the title in the source language, or remove
-credit = "A Vector Translation Project by Your Name"
+credit = "Vector translated by Your Name"
 affiliation = "Institution"
 output = "book/book.pdf"
 credits = """
