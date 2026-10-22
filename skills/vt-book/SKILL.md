@@ -13,7 +13,8 @@ Method §9; rule 18. Tool: Vector Book (https://github.com/vector-humanities/vec
 3. Write `HANDOVER.md` in the book folder for the design side: state of the text, what is provisional, questions. Make a `proof/` folder for corrections coming back.
 
 ## Text form
-- One level-one heading per file that opens a chapter or text: `# Title {num="…" orig="…" run="…"}`; sections `## N. Title`. Put any translator's note on a title on the first sentence.
+- At most one level-one heading per file: the file that opens a chapter or text starts `# Title {num="…" orig="…" run="…"}`; a file without one continues the chapter before it. Sections are `## N. Title`. A translator's note on a title goes on the heading (`# Title[^label] {…}`).
+- Section breaks: a paragraph of `· · ·` or `* * *` alone; never `***` or `---`, which set only as a small space.
 - Footnote labels unique across the book; `[p. N]` markers; figures as image line plus `**Figure N.**` caption with `Key:` or `Labels:`.
 
 ## Build
