@@ -30,8 +30,16 @@ path/to/vector-book/vbook sweep <book>
 ## Design
 `vbook samples <book>` sets the book in each template. The translator chooses; log the choice in `STATUS.md` and ask the design side to set `[design]`.
 
-## Proof
-Text faults go in `proof/` as change lists (method §7), applied with `tools/vt_apply.py` to the literal and readable masters together, then rebuild. Layout faults go to the design side.
+## Returns from the book side
+A return is `proof/return-NN.md` (format: Vector Book `docs/handover.md`, Returns; blank: `templates/return.md`). For each item R1, R2, …:
+- **MARKUP** (form of the text) and **SOURCES** (manifest, glossary, figures, files): apply.
+- **TEXT** (wording): check against the literal and the page image before applying; the literal first, the readable from it.
+- **QUERY** and **OTHER**: put to the translator with the evidence and your recommendation; write QUERY-TO-TRANSLATOR and the date; apply the answer when it comes.
+- **LAYOUT**: NOTED.
+Apply the proposed change lists straight from the return: `python3 tools/vt_apply.py <book>/proof/return-NN.md --target readable=<file> --target literal=<file>` (dry run, then `--write`). Write the Response line under every item (FIXED with the commit and whether the literal changed, CHANGED-OTHERWISE, QUERY-TO-TRANSLATOR, DECLINED with the reason, NOTED). Then run the post-design check and `vbook check <book> --report`, commit, set the Status to ANSWERED, and tell the book side.
+
+## Post-design check
+`python3 tools/vt_bookcheck.py <book>` checks the typeset PDF against the translation's own text, independently of Vector Book: every word in order, every note, every heading. Run it when the translator asks, before marking a return ANSWERED, and before sign-off. With `--write` it records findings as `proof/check-NN.md`, LAYOUT items addressed to the book side, in the return format; tell the book side. Close each item after the rebuild that fixes it.
 
 ## Gate
-The book is final when the translator signs off the text in `STATUS.md` and `BUILD.md` reports no faults.
+The book is final when the translator signs off the text in `STATUS.md`, `BUILD.md` reports no faults, the post-design check has no open findings, and every return and check is CLOSED.

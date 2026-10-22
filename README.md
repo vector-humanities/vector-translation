@@ -20,7 +20,7 @@ This repository holds the method as a procedure, the rules learned in practice, 
 | [`method/case-kuki.md`](method/case-kuki.md) | The first run, in figures |
 | [`skills/`](skills/) | Claude Code skills: a coordinator and one per stage |
 | [`templates/`](templates/) | Briefs, conventions sheet, glossary, survey, fact sheet, status, project `AGENTS.md`, Vector Book `book.toml` |
-| [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py`, `vt_corpus.py` (Python 3, standard library only) |
+| [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py`, `vt_corpus.py`, `vt_bookcheck.py` (Python 3, standard library only; the book check needs `pdftotext`) |
 | [`brand/`](brand/) | The mark and its generator |
 
 ## Stages

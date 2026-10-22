@@ -156,12 +156,13 @@
         <div class="kit reveal">
           <svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l7 7-7 7"/><path d="M18 28h14"/></svg>
           <h3>Tools</h3>
-          <p>Four scripts in the Python standard library, run by the coordinator.</p>
+          <p>Five scripts in the Python standard library, run by the coordinator.</p>
           <dl>
             <dt>vt_apply.py</dt><dd>Applies change lists. Each OLD must match its file exactly once; a dry run reports the matches before anything is written.</dd>
             <dt>vt_check.py</dt><dd>Page markers continuous, footnotes paired, dashes and banned words, competing renderings of each term in <code>glossary.csv</code>.</dd>
             <dt>vt_assemble.py</dt><dd>Joins section files, front matter and back matter into the master files, dropping working notes.</dd>
             <dt>vt_corpus.py</dt><dd>Merges the corpus term tables and reports each term's attested renderings, with their sources, against the glossary.</dd>
+            <dt>vt_bookcheck.py</dt><dd>Post-design check: the typeset book against the translation's own text, every word, note and heading, with each difference located.</dd>
           </dl>
           <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/tools">tools/</a></p>
         </div>
