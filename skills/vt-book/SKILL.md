@@ -8,7 +8,7 @@ description: Stage 7 of a vector translation. Hand the translation to Vector Boo
 Method §9; rule 18. Tool: Vector Book (https://github.com/vector-humanities/vector-book), called by path. Policy: its `docs/handover.md`. Keys: its `docs/config.md`; text conventions: its `docs/conventions.md`.
 
 ## Set up
-1. Copy `templates/book.toml` to the book folder root. Fill the translation tables only: `[book]` (title, subtitle, author, original title, credit line, affiliation, `credits` with edition, library and identifier, image credit, rights line, conventions note), `[sources]` (front, body = `text/readable/*.md`, back, glossary, overlays) and `[markers]` (page pattern; strip patterns for image numbers). Leave `[design]`, `[cover]`, `[back]` and `[frontispiece]` to the design side, with the starter's defaults.
+1. Copy `templates/book.toml` to the book folder root. Fill the translation tables only: `[book]` (title, subtitle, author, original title, credit line, affiliation, `credits` with edition, library and identifier, image credit, rights line, conventions note), `[sources]` (front, body = `text/readable/*.md`, back, glossary, overlays) and `[markers]` (page pattern; strip patterns for image numbers). Leave `[design]`, `[cover]`, `[back]` and `[frontispiece]` to the design side, with the starter's defaults, and `[imprint]` to the publisher (the series that takes the book); do not add it.
 2. Add `*/build/` (or `build/`) to the repository's `.gitignore`. Commit `book/`.
 3. Write `HANDOVER.md` in the book folder for the design side: state of the text, what is provisional, questions. Make a `proof/` folder for corrections coming back.
 
