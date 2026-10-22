@@ -25,7 +25,20 @@ Skill: `vt-survey`. Record: `templates/survey.md`.
 2. **Images.** Obtain page images at full resolution (IIIF where the library offers it). Use OCR as the source only where it has been shown to be reliable for this script and typeface; otherwise keep it for searching.
 3. **Page mapping.** Work out and test the formula from image number to printed page. Put it in every brief.
 4. **Every page.** Make a contact sheet of every image and page through all of it before partitioning. List front matter (including unnumbered pages), every heading with its real page, figures, tables, verse, the author's own notes, and blank pages. Do not trust the printed contents.
-5. **Existing translations and quotations.** Collect complete, partial and draft translations, translations into other languages, and scholarship that quotes the text with page references. Identify the standard scholarly edition for the concordance.
+5. **Existing translations and quotations.** Collect complete, partial and draft translations, translations into other languages, and scholarship that quotes the text with page references. Identify the standard scholarly edition for the concordance. These become the first sources of the translation corpus (2a).
+
+## 2a. Translation corpus
+
+Skill: `vt-corpus`. Templates: `templates/corpus/`, `templates/BRIEF-corpus.md`. Tool: `tools/vt_corpus.py`.
+
+Before the pilot, build a corpus of how this author, and the author's circle, have already been translated. It guides word choice, register and the glossary, and it is the project's reference for scholarly finds and for the reasons behind translation decisions.
+
+1. **Sources.** Existing translations of the work, in any language; English translations of the author's other works; translations from the author's circle that share its vocabulary (correspondents, teachers, readers); English scholarship that quotes the author; translations of the sources the author quotes. List each in `corpus/SOURCES.md` with its citation from the reference manager, a URL, DOI or catalogue record, and its rights.
+2. **Terms.** One sub-agent per source records every rendering of the author's recurring terms in `corpus/terms-<source>.csv`: source term, rendering, translator, work, page, a context of at most fifteen words, note, source ID and a URL to the page where one exists. `vt_corpus.py` merges the tables and counts each term's renderings across sources.
+3. **Style.** `corpus/style.md`: how other translators handle sentence length, the author's punctuation, compounds, emphasis, quotations and notes, with an example of each.
+4. **Finds.** `corpus/finds.md`: identifications of people, works and quotations; readings of difficult passages; errors and disagreements in other translations; anything a translator's note, the Preface or the translation-choices appendix may cite. Every entry in the corpus, in every file, carries its source ID and page, and a URL where one exists, so that it can be checked against the original after the texts are removed; a translator's note drawing on the corpus cites the source in full.
+5. **Use.** Attested renderings fill the glossary's `competitors` and `notes` columns, so drift is counted against real alternatives. The core terms (§3.3) are fixed against the corpus. The style note goes to the translator with the register page. Briefs give the glossary and the style note, never the corpus texts. The external check (§7.4), the attribution pass (§7.3), the translator's notes and Appendix A draw on `finds.md`.
+6. **Limits.** The corpus records attested alternatives with their reasons; it does not supply defaults. The translator decides each term, and may depart from an established rendering where the author's usage calls for it. Full texts of copyrighted sources are kept in the translation's private repository (`corpus/texts/`), for the translator's research and checking, and never in a public repository or the book; the tables, notes and short contexts are what the translation and its apparatus draw on. When the translator signs off the translation as satisfactory, `corpus/texts/` is removed, from the repository's history as well as its files; everything made from them stays with the translation: the term tables, the quotations recorded with their pages, the style note, the finds, and the notes drawn from them. Removal needs two separate commands from the translator. After the first, the coordinator lists the files and commits affected and backs the repository up outside itself; only a second command, given after the translator has read that list, carries it out. One command, or a confirmation in the same message as the first, is not enough. The backup is deleted once the translator has checked the result. The read-through flags any passage of the readable version that matches a corpus translation over more than a phrase.
 
 ## 3. Pilot and conventions
 
@@ -33,7 +46,7 @@ Skill: `vt-pilot`. Decision sheet: `templates/conventions.md`. Glossary: `templa
 
 1. **Pilot section.** The coordinator translates the opening section itself, literally and readably, to learn the text.
 2. **Register on a page.** The translator revises one page of the readable version. That page, approved, becomes the register model in every brief.
-3. **Core terms.** Fix the ontological and technical vocabulary against every existing translation collected in 2.5, recording each established rendering and where translators disagree. The translator decides.
+3. **Core terms.** Fix the ontological and technical vocabulary against the translation corpus (2a), recording each established rendering and where translators disagree. The translator decides.
 4. **Conventions, once.** Settle every item on the decision sheet before the first batch: how translator's additions and notes are marked, the author's own notes, citation form, emphasis, verse and quotations in other languages, quotations of other authors, dates, numbers, spelling. Each change after the first batch costs a retrofit.
 5. **Glossary file.** Start `glossary.csv`. Briefs, checks and the book's glossary all read from it.
 
@@ -119,6 +132,7 @@ Skill: `vt-book`. Tool: [Vector Book](https://github.com/vector-humanities/vecto
 - [ ] Page mapping worked out and tested
 - [ ] Contact sheet of every image; front matter, headings, figures, author's notes, blank pages listed
 - [ ] Existing translations and quoting scholarship collected; standard edition identified
+- [ ] Translation corpus built: sources listed, term tables merged, style note, finds
 - [ ] Pilot section; register approved on a page; core terms fixed; conventions sheet signed off
 - [ ] `glossary.csv` started; project layout created; `STATUS.md` started
 - [ ] Brief written; parts partitioned by headings; hard passages assigned double drafts
@@ -128,3 +142,4 @@ Skill: `vt-book`. Tool: [Vector Book](https://github.com/vector-humanities/vecto
 - [ ] Book built from the first chapter, rebuilt after each merge; glyph sweep clean
 - [ ] Fact sheet, Preface, Translator's Note, appendices, index, figures
 - [ ] Sample review by the translator; provenance and costs recorded
+- [ ] On the translator's sign-off: `corpus/texts/` removed, history included

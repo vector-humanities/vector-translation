@@ -15,6 +15,9 @@ Headings fall partway down pages. Each part runs from its first heading to the n
 
 ## Terms and register
 
+**4a. Build a translation corpus before the pilot, and keep it as a reference.**
+On the first run, existing translations were consulted as they came to hand: a specialist's draft of the opening section, a thesis quoting the French translation, an essay with its own renderings. Each changed the translation, and each arrived late: the existence/being correction after two chapters, the French readings at the end. A corpus collected first, of the work's translations, the author's other translated works and the circle that shares its vocabulary, gives the glossary attested alternatives from the start and keeps the scholarly finds (identifications, readings, disagreements) in one place for the notes, the Preface and the translation-choices appendix. It records alternatives; the translator still decides.
+
 **4. Collect existing translations before the pilot, and fix the core terms against them.**
 Two distinct Japanese terms (存在 and 有) were both rendered "being" for two chapters, the default of the English philosophical corpus. A specialist's draft of the opening section showed the distinction (existence and being). The correction then needed a terminology pass over the whole book, with every occurrence checked against the image.
 
@@ -70,4 +73,4 @@ Problems appeared late: tables that could not break overprinted the glossary pag
 The first push of the Kuki repository included the private working log, email addresses and local paths. They were removed and the history rewritten. Correspondence and contacts stay in a private log outside the repository.
 
 **20. Third-party scholarship stays out of public repositories.**
-Copyrighted secondary material used for checking is kept privately and never committed to a public repository.
+Copyrighted secondary material used for checking, and the full texts of the translation corpus, are kept in the translation's private repository and never committed to a public one. The corpus texts are removed, from the history too, once the translator signs off the translation, and only after two separate commands from the translator, so that a mistaken instruction cannot delete them.

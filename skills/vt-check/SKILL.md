@@ -13,7 +13,7 @@ Checkers never edit the translation. They return change lists; you apply them.
 1. **Read-through** (per part, as parts return): readable against literal; ADDS, DROPS, CHANGES, RULE. Problems in the literal come back in a separate list; check them against the image yourself.
 2. **Terminology** (whenever the translator changes a core term): every candidate English word checked against the image; only translations of that term change. Split the text into ranges across parallel checkers.
 3. **Attribution** (before the apparatus is finished): every name, date and identification in the translator's notes checked against a named source. Unverified claims are deleted.
-4. **External** (once): every passage quoted by existing translations or scholarship compared; differences resolved against the image; attested alternatives recorded for the translation-choices appendix.
+4. **External** (once): every passage quoted by existing translations or scholarship compared, starting from the corpus (`corpus/finds.md`, `corpus/terms.csv`); differences resolved against the image; attested alternatives recorded for the translation-choices appendix.
 5. **Concordance** (once): pages of the printing translated paired with the standard edition from every page reference the literature gives with a quotation; anchors graded HIGH, MEDIUM, LOW; check that both page series increase together; a locating rule of thumb, labelled not for citation.
 
 ## Applying

@@ -9,7 +9,7 @@ Go paragraph by paragraph, aligning the versions by their `[p. N]` markers. Find
 2. **DROPS** a sentence, clause, qualification, example, citation, page reference or emphasis present in the literal.
 3. **CHANGES** a sense, a hedge, a modality, a term against the glossary, or the attribution of a view (the author's own against one the author reports).
 4. Breaks a **RULE** of house style (the banned list in `AGENTS.md`).
-5. Matches a **published translation** word for word over more than a phrase (flag as CHANGES with the source if known).
+5. Matches a **published translation** word for word over more than a phrase (flag as CHANGES with the source; check the corpus tables in `corpus/terms.csv` and the texts in `corpus/texts/`).
 
 Joined sentences, reordered clauses and reformulations that restate the author without adding are the intended register: leave them. Do not propose stylistic preferences.
 

@@ -15,12 +15,12 @@ This repository holds the method as a procedure, the rules learned in practice, 
 | | |
 |---|---|
 | [`method/method.md`](method/method.md) | The procedure, stage by stage, with a checklist |
-| [`method/rules.md`](method/rules.md) | Twenty rules, each with the incident behind it |
+| [`method/rules.md`](method/rules.md) | Twenty-one rules, each with the incident behind it |
 | [`method/languages/`](method/languages/) | Notes for [Japanese](method/languages/japanese.md) and [German](method/languages/german.md) sources |
 | [`method/case-kuki.md`](method/case-kuki.md) | The first run, in figures |
 | [`skills/`](skills/) | Claude Code skills: a coordinator and one per stage |
 | [`templates/`](templates/) | Briefs, conventions sheet, glossary, survey, fact sheet, status, project `AGENTS.md`, Vector Book `book.toml` |
-| [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py` (Python 3, standard library only) |
+| [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py`, `vt_corpus.py` (Python 3, standard library only) |
 | [`brand/`](brand/) | The mark and its generator |
 
 ## Stages
@@ -28,6 +28,7 @@ This repository holds the method as a procedure, the rules learned in practice, 
 | | Stage | Skill | The translator decides |
 |---|---|---|---|
 | 1 | Source survey: edition, rights, images, page mapping, every page, existing translations | `vt-survey` | edition; whether rights allow the project |
+| 1a | Translation corpus: existing translations of the work, the author and the circle, as term tables, a style note and scholarly finds | `vt-corpus` | sources; removal of texts at sign-off |
 | 2 | Pilot and conventions: pilot section, register page, core terms, decision sheet, glossary | `vt-pilot` | register, terms, every convention |
 | 3 | Brief and batches: partition by headings, shared brief, parallel drafting | `vt-brief` | partition, hard passages |
 | 4 | Merge and integrity checks, per part as it returns | `vt-merge` | new terms |

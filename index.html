@@ -82,7 +82,8 @@
       </div>
       <ol class="stages indent reveal">
         <li><b>Source survey</b><span>Edition, printing and rights; page images at full resolution; the mapping from image to printed page; every page seen at contact-sheet size; existing translations and scholarship that quotes the text.</span></li>
-        <li><b>Pilot and conventions</b><span>The coordinator translates an opening section closely. The register is approved on a sample page, core terms are fixed against existing translations, and footnotes, brackets, citation form and verse are decided once.</span><em class="decides">Translator decides: register, terms, conventions</em></li>
+        <li><b>Translation corpus</b><span>Existing translations of the work, of the author's other works and of the circle that shares its vocabulary, recorded as term tables, a style note and scholarly finds: attested alternatives for the glossary, and the reference for translation decisions and notes.</span><em class="decides">Translator decides: sources</em></li>
+        <li><b>Pilot and conventions</b><span>The coordinator translates an opening section closely. The register is approved on a sample page, core terms are fixed against the corpus, and footnotes, brackets, citation form and verse are decided once.</span><em class="decides">Translator decides: register, terms, conventions</em></li>
         <li><b>Brief and batches</b><span>A shared brief for each batch; parts of about ten spreads bounded by headings; six to eight agents at a time, each writing the literal version, then the readable, then notes for the editor.</span></li>
         <li><b>Merge and integrity checks</b><span>The coordinator merges the parts in order and runs scripted checks: page markers continuous, every note defined once, banned words absent, competing renderings of each term counted. Backups before every merge.</span></li>
         <li><b>Checking passes</b><span>Terminology; readable against literal; comparison with passages quoted in published translations and scholarship; attributions; a concordance with the standard edition. Each pass returns a change list.</span><em class="decides">Translator decides: disputed readings</em></li>
@@ -129,6 +130,7 @@
           <dl>
             <dt>vector-translation</dt><dd>Roles, stages and which skill to use when</dd>
             <dt>vt-survey</dt><dd>Edition, rights, images, page mapping, contact sheet</dd>
+            <dt>vt-corpus</dt><dd>Translation corpus: term tables, style note, finds</dd>
             <dt>vt-pilot</dt><dd>Pilot section, register sample, core terms, conventions</dd>
             <dt>vt-brief</dt><dd>Brief, partition, batch launch, boundary reports</dd>
             <dt>vt-merge</dt><dd>Merge and integrity checks</dd>
@@ -154,11 +156,12 @@
         <div class="kit reveal">
           <svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l7 7-7 7"/><path d="M18 28h14"/></svg>
           <h3>Tools</h3>
-          <p>Three scripts in the Python standard library, run by the coordinator.</p>
+          <p>Four scripts in the Python standard library, run by the coordinator.</p>
           <dl>
             <dt>vt_apply.py</dt><dd>Applies change lists. Each OLD must match its file exactly once; a dry run reports the matches before anything is written.</dd>
             <dt>vt_check.py</dt><dd>Page markers continuous, footnotes paired, dashes and banned words, competing renderings of each term in <code>glossary.csv</code>.</dd>
             <dt>vt_assemble.py</dt><dd>Joins section files, front matter and back matter into the master files, dropping working notes.</dd>
+            <dt>vt_corpus.py</dt><dd>Merges the corpus term tables and reports each term's attested renderings, with their sources, against the glossary.</dd>
           </dl>
           <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/tools">tools/</a></p>
         </div>

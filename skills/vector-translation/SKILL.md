@@ -1,6 +1,6 @@
 ---
 name: vector-translation
-description: Coordinate a vector translation, a book-length translation from page images made by a coordinating agent directing parallel sub-agents under a human translator's direction, with a literal and a readable version checked against each other and the source. Use when starting, resuming or planning a vector translation project, or when asked which stage comes next. Routes to the stage skills vt-survey, vt-pilot, vt-brief, vt-merge, vt-check, vt-apparatus and vt-book.
+description: Coordinate a vector translation, a book-length translation from page images made by a coordinating agent directing parallel sub-agents under a human translator's direction, with a literal and a readable version checked against each other and the source. Use when starting, resuming or planning a vector translation project, or when asked which stage comes next. Routes to the stage skills vt-survey, vt-corpus, vt-pilot, vt-brief, vt-merge, vt-check, vt-apparatus and vt-book.
 ---
 
 # Vector translation: coordinator
@@ -13,6 +13,7 @@ You are the coordinator. The human translator directs; you survey, brief, launch
 - **Check after every write**, your own included: `tools/vt_check.py`.
 - **Literal is the master.** The readable version adds nothing absent from the literal except marked glosses and insertions.
 - **Never fabricate** citations, dates, pages or identifications. Delete what cannot be verified.
+- **Cite back to the original.** Every note, find or record that depends on a source gives its citation and page, and a URL where one exists.
 - **Persist as you go.** Every agent appends each finished section to its file.
 - **Nothing private in the repository**: no working log, correspondence, emails, local paths, third-party scholarship.
 - **Rights before anything else.** Do not begin translating until the rights status is recorded and the translator has confirmed the text can be translated and published as intended.
@@ -21,6 +22,7 @@ You are the coordinator. The human translator directs; you survey, brief, launch
 | Stage | Skill | Output | Translator decides |
 |---|---|---|---|
 | 1 Source survey | `vt-survey` | `survey.md`, contact sheet, rights | edition; go/no-go on rights |
+| 1a Translation corpus | `vt-corpus` | `corpus/`: sources, term tables, style note, finds | which sources; downloads; removal of texts at sign-off |
 | 2 Pilot and conventions | `vt-pilot` | pilot section, `conventions.md`, `glossary.csv` | register page, core terms, every convention |
 | 3 Brief and batches | `vt-brief` | `BRIEF.md`, part files | partition, hard passages |
 | 4 Merge and checks | `vt-merge` | sections in `text/`, notes file | new terms raised by agents |

@@ -15,8 +15,11 @@ Method §8; rule 14. Template: `templates/facts-sheet.md`.
 ## Translator's Note
 Drafted for the translator to revise and sign: the text and printing; status (what has and has not been checked); the method in a paragraph; the conventions; debts to earlier translators and scholars. The translator's wording is final.
 
+## Corpus
+Translator's notes, the fact sheet and Appendix A draw on `corpus/finds.md` and the corpus tables, citing source and page.
+
 ## Appendices
-- **A. Notes on translation choices**, for other translators: the core terms and why, attested alternatives from the external check, conventions and their reasons, misprints kept.
+- **A. Notes on translation choices**, for other translators: the core terms and why, attested alternatives from the corpus and the external check, conventions and their reasons, misprints kept.
 - **B. Contents of the printing** with the real section pages (from the survey).
 - **C. Concordance** with the standard edition (from `vt-check`).
 - **D. Index of persons and works**, built by script from the literal with the translator's notes excluded; pages checked by script.
