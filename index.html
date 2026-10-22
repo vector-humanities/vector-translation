@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vector Translation</title>
+  <meta name="description" content="Vector translation: a method for translating books from page images with parallel AI agents under a translator's direction, with a toolkit of skills, briefs and checks. A Vector Humanities method.">
+  <meta name="theme-color" content="#f6f2e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0e1c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:title" content="Vector Translation">
+  <meta property="og:description" content="A method for translating books from page images with parallel AI agents under a translator's direction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vector-humanities.github.io/vector-translation/">
+  <meta property="og:image" content="https://vector-humanities.github.io/vector-translation/brand/social-card-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    (function () {
+      var s = null;
+      try { s = localStorage.getItem('vt-theme'); } catch (e) {}
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text=%E5%81%B6%E7%84%B6%E6%80%A7%E3%81%AE%E5%95%8F%E9%A1%8C%E4%B9%9D%E9%AC%BC%E5%91%A8%E9%80%A0%E5%AD%98%E5%9C%A8%E6%9C%89%E5%80%9F%E3%80%94%E3%80%95">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vector Translation home">
+      <svg class="brand-mark mk" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><path d="M4.00,43.63 L33.03,13.18" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M63.35,37.68 L33.03,13.18" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M4.00,43.63 L33.03,70.20" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M33.03,13.18 L24.38,28.62" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M63.35,37.68 L33.03,70.20" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M4.00,43.63 L24.38,28.62" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M63.35,37.68 L24.38,28.62" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M33.03,70.20 L24.38,28.62" class="s" stroke-width="2.78" stroke-linecap="round"/><path d="M33.03,13.18 L58.55,26.17" class="a" stroke-width="3.89" stroke-linecap="round"/><path d="M65.68,29.80 L60.54,22.25 L56.55,30.09 Z"  class="a" stroke-width="2.33" stroke-linejoin="round"/><path d="M36.65,60.25 L65.68,29.80" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M96.00,54.30 L65.68,29.80" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M36.65,60.25 L65.68,86.82" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M65.68,29.80 L57.02,45.24" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M96.00,54.30 L65.68,86.82" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M36.65,60.25 L57.02,45.24" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M96.00,54.30 L57.02,45.24" class="b" stroke-width="4.72" stroke-linecap="round"/><path d="M65.68,86.82 L57.02,45.24" class="b" stroke-width="4.72" stroke-linecap="round"/></svg>
+      <span>Vector Translation</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="hide-sm" href="#method">Method</a>
+      <a class="hide-sm" href="#rules">Rules</a>
+      <a class="hide-sm" href="#toolkit">Toolkit</a>
+      <a class="up" href="https://vector-humanities.github.io/" title="Vector Humanities">VH&nbsp;&#8599;</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">A Vector Humanities method · University of Sussex</p>
+        <h1>Vector<br><em>Translation</em></h1>
+        <p class="lede">A method for translating books from page images with parallel AI agents under a translator's direction, set out as a procedure with skills, briefs and checking scripts.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/vector-humanities/vector-translation/blob/main/method/method.md">Read the method</a>
+          <a class="btn" href="#toolkit">Toolkit</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <svg id="hero-mark" class="mk" viewBox="0 0 100 100" role="img" aria-label="Two wireframe octahedra, the second displaced from the first, joined by an arrow"></svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">01 · Method</p>
+        <h2>The method</h2>
+      </div>
+      <div class="prose indent reveal">
+        <p>Agents work through the page images of a book in parallel, each on a range bounded by the author's headings, under a shared brief that fixes the glossary, the register and the conventions. Each passage is drafted twice: a literal version, sentence by sentence, for quotation and checking, and a readable version in continuous English prose.</p>
+        <p>Each version is checked against the other and against the page images. One coordinating agent merges the parts and applies corrections; every other agent returns its corrections as a change list and does not write to the master files.</p>
+        <p>The translator writes the brief, settles the terms and conventions, reads samples against the source and signs off. These decisions are dated and logged with the translation.</p>
+      </div>
+      <ol class="stages indent reveal">
+        <li><b>Source survey</b><span>Edition, printing and rights; page images at full resolution; the mapping from image to printed page; every page seen at contact-sheet size; existing translations and scholarship that quotes the text.</span></li>
+        <li><b>Pilot and conventions</b><span>The coordinator translates an opening section closely. The register is approved on a sample page, core terms are fixed against existing translations, and footnotes, brackets, citation form and verse are decided once.</span><em class="decides">Translator decides: register, terms, conventions</em></li>
+        <li><b>Brief and batches</b><span>A shared brief for each batch; parts of about ten spreads bounded by headings; six to eight agents at a time, each writing the literal version, then the readable, then notes for the editor.</span></li>
+        <li><b>Merge and integrity checks</b><span>The coordinator merges the parts in order and runs scripted checks: page markers continuous, every note defined once, banned words absent, competing renderings of each term counted. Backups before every merge.</span></li>
+        <li><b>Checking passes</b><span>Terminology; readable against literal; comparison with passages quoted in published translations and scholarship; attributions; a concordance with the standard edition. Each pass returns a change list.</span><em class="decides">Translator decides: disputed readings</em></li>
+        <li><b>Apparatus</b><span>A preface written from a sourced fact sheet; the Translator's Note; notes on translation choices; contents of the printing; concordance; index of persons and works; glossary; figures.</span><em class="decides">Translator decides: contents and scope</em></li>
+        <li><b>Book</b><span>Design samples, a typeset build from the first merged chapter on, a sweep for missing glyphs, covers.</span><em class="decides">Translator decides: design and sign-off</em></li>
+      </ol>
+      <p class="src-link indent"><a href="https://github.com/vector-humanities/vector-translation/blob/main/method/method.md">method/method.md</a></p>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">02 · Rules</p>
+        <h2>Rules from practice</h2>
+      </div>
+      <ol class="rules reveal">
+        <li><b>Translate from the images</b><span>OCR of the pre-war vertical Japanese read <span class="jp-inline">偶然</span> as <span class="jp-inline">借然</span>. It served only for searching.</span></li>
+        <li><b>Survey every page first</b><span>The printed contents gave wrong section pages throughout and left out the author's own preface, which turned up at the book-design stage.</span></li>
+        <li><b>Fix core terms before the pilot</b><span><span class="jp-inline">存在</span> and <span class="jp-inline">有</span> were both rendered "being", the default of the English corpus, for two chapters until an existing draft separated existence from being. The change needed a pass over the whole book.</span></li>
+        <li><b>The readable adds nothing absent from the literal</b><span>The read-through found 106 faults, mostly added inference words, dropped hedges and moved emphasis. It now runs on each part as it returns.</span></li>
+        <li><b>Never drop the literal version</b><span>It was dropped for one chapter and had to be restarted. Every later correction to the readable text was found through it.</span></li>
+        <li><b>Mark every addition</b><span>Translator's notes are footnotes beginning "Tr."; insertions into the author's sentences go in brackets <span class="jp-inline">〔 〕</span>.</span></li>
+        <li><b>Check attributions as a pass of their own</b><span>Agents supply names and dates in notes. Any that cannot be verified against a named source is deleted.</span></li>
+        <li><b>Decide conventions once</b><span>Footnotes or inline glosses, brackets, citation form and verse each changed during the first run, and each change was retrofitted across finished chapters.</span></li>
+        <li><b>Scripts check everyone</b><span>A pattern in the coordinator's own merge script folded footnote definitions into paragraphs, and banned words came from the coordinator as well as the agents.</span></li>
+        <li><b>Build the book from the first chapter</b><span>Tables that could not break across pages, notes lost from captions and missing glyphs all surfaced at the end.</span></li>
+      </ol>
+      <p class="src-link"><a href="https://github.com/vector-humanities/vector-translation/blob/main/method/rules.md">method/rules.md</a></p>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">03 · Toolkit</p>
+        <h2>Skills, templates and tools</h2>
+      </div>
+      <div class="kits">
+        <div class="kit reveal">
+          <svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h18l6 6v22H8z"/><path d="M26 6v6h6"/><path d="M13 19h14M13 24h14M13 29h9"/></svg>
+          <h3>Skills</h3>
+          <p>Claude Code skills, one for each stage, with the coordinator's skill as the entry point.</p>
+          <dl>
+            <dt>vector-translation</dt><dd>Roles, stages and which skill to use when</dd>
+            <dt>vt-survey</dt><dd>Edition, rights, images, page mapping, contact sheet</dd>
+            <dt>vt-pilot</dt><dd>Pilot section, register sample, core terms, conventions</dd>
+            <dt>vt-brief</dt><dd>Brief, partition, batch launch, boundary reports</dd>
+            <dt>vt-merge</dt><dd>Merge and integrity checks</dd>
+            <dt>vt-check</dt><dd>Terminology, read-through, external, attribution, concordance</dd>
+            <dt>vt-apparatus</dt><dd>Fact sheet, preface, Translator's Note, appendices, index, figures</dd>
+            <dt>vt-book</dt><dd>Typeset build, glyph sweep, covers</dd>
+          </dl>
+          <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/skills">skills/</a></p>
+        </div>
+        <div class="kit reveal">
+          <svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="6" y="6" width="28" height="28" rx="2"/><path d="M6 14h28M14 14v20"/><path d="M18 20h12M18 25h12M18 30h8" stroke-dasharray="2 2.5"/></svg>
+          <h3>Templates</h3>
+          <p>The documents each project fills in before agents start.</p>
+          <dl>
+            <dt>BRIEF-translate.md</dt><dd>Brief shared by every translating agent</dd>
+            <dt>BRIEF-readthrough.md · BRIEF-terms.md</dt><dd>Briefs for the checking passes</dd>
+            <dt>conventions.md</dt><dd>The decisions to make before the pilot</dd>
+            <dt>glossary.csv</dt><dd>Binding terms, read by briefs and checks</dd>
+            <dt>change-list.md · STATUS.md</dt><dd>Correction format; dated project status</dd>
+          </dl>
+          <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/templates">templates/</a></p>
+        </div>
+        <div class="kit reveal">
+          <svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l7 7-7 7"/><path d="M18 28h14"/></svg>
+          <h3>Tools</h3>
+          <p>Three scripts in the Python standard library, run by the coordinator.</p>
+          <dl>
+            <dt>vt_apply.py</dt><dd>Applies change lists. Each OLD must match its file exactly once; a dry run reports the matches before anything is written.</dd>
+            <dt>vt_check.py</dt><dd>Page markers continuous, footnotes paired, dashes and banned words, competing renderings of each term in <code>glossary.csv</code>.</dd>
+            <dt>vt_assemble.py</dt><dd>Joins section files, front matter and back matter into the master files, dropping working notes.</dd>
+          </dl>
+          <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/tools">tools/</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kuki">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">04 · First case</p>
+        <h2>Kuki Shūzō, <i>The Problem of Contingency</i></h2>
+      </div>
+      <article class="case reveal">
+        <div class="cover">
+          <p class="jp" lang="ja">偶然性の問題</p>
+          <div class="cover-text">
+            <span class="tag">Preliminary</span>
+            <h3>The Problem of Contingency</h3>
+            <p class="by">Kuki Shūzō (<span lang="ja">九鬼周造</span>), Iwanami Shoten, 1935</p>
+          </div>
+        </div>
+        <div class="body">
+          <p>Kuki's study of contingency in its categorical, hypothetical and disjunctive forms, which has not previously been published in English in full. It was translated on 20 and 21 October 2026 from the National Diet Library page images of the 1948 printing, which are in the public domain.</p>
+          <div class="stats">
+            <div><b>331</b><span>printed pages</span></div>
+            <div><b>14</b><span>parts, two batches of seven</span></div>
+            <div><b>96,000</b><span>words, readable version (about)</span></div>
+            <div><b>470</b><span>translator's notes (about)</span></div>
+            <div><b>106</b><span>read-through fixes</span></div>
+            <div><b>22</b><span>figures</span></div>
+            <div><b>250</b><span>pages, typeset book</span></div>
+            <div><b>4.8M</b><span>tokens of background agent work</span></div>
+          </div>
+          <p>Being checked against the <i>Kuki Shūzō zenshū</i> and Omodaka Hisayuki's French translation (1966).</p>
+          <p><a href="https://vector-humanities.github.io/#projects">The project at Vector Humanities</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">05 · Next</p>
+        <h2>A German text</h2>
+      </div>
+      <div class="next indent reveal">
+        <div class="prose">
+          <p>The second translation will be a German text from the Frankfurt School or its circle, in the public domain and not yet translated into English. The method is being adapted for German: the author's own footnotes alongside the translator's, Fraktur type, letter-spaced emphasis, and the established English renderings of terms such as <i>Vermittlung</i> and <i>Verdinglichung</i>.</p>
+          <p class="src-link"><a href="https://github.com/vector-humanities/vector-translation/blob/main/method/languages/german.md">method/languages/german.md</a></p>
+        </div>
+        <span class="tag">In preparation</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Vector Translation is a <a href="https://vector-humanities.github.io/">Vector Humanities</a> method. <a href="https://github.com/dmberry">David M. Berry</a>, University of Sussex.</p>
+    <p>Licence: <a href="https://github.com/vector-humanities/vector-translation/blob/main/LICENSE">GPL-3.0</a> · <a href="https://github.com/vector-humanities/vector-translation">github.com/vector-humanities/vector-translation</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
