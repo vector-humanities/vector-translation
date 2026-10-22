@@ -208,6 +208,7 @@ h3 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-heig
 .case .cover { position: relative; padding: 30px 32px; background: var(--surface-alt); border-right: 1px solid var(--rule); min-height: 320px; display: flex; flex-direction: column; justify-content: flex-end; }
 .case .jp { font-family: var(--jp); font-size: clamp(2.2rem, 4.2vw, 3.1rem); line-height: 1.15; letter-spacing: .08em; margin: 0; writing-mode: vertical-rl; position: absolute; right: 30px; top: 28px; color: var(--ink); }
 .case .cover-text { max-width: 68%; }
+.case .de { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.12; margin: 0 0 auto; padding-bottom: 28px; color: var(--ink); max-width: 18ch; text-wrap: balance; }
 .case .cover h3 { font-size: 1.8rem; line-height: 1.1; margin-bottom: 10px; }
 .case .cover .by { font-style: italic; color: var(--muted); margin: 0; }
 .case .cover .by [lang="ja"] { font-style: normal; font-family: var(--jp); }
