@@ -19,7 +19,7 @@ This repository holds the method as a procedure, the rules learned in practice, 
 | [`method/languages/`](method/languages/) | Notes for [Japanese](method/languages/japanese.md) and [German](method/languages/german.md) sources |
 | [`method/case-kuki.md`](method/case-kuki.md) | The first run, in figures |
 | [`skills/`](skills/) | Claude Code skills: a coordinator and one per stage |
-| [`templates/`](templates/) | Briefs, conventions sheet, glossary, survey, fact sheet, status, project `AGENTS.md` |
+| [`templates/`](templates/) | Briefs, conventions sheet, glossary, survey, fact sheet, status, project `AGENTS.md`, Vector Book `book.toml` |
 | [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py` (Python 3, standard library only) |
 | [`brand/`](brand/) | The mark and its generator |
 
@@ -33,7 +33,7 @@ This repository holds the method as a procedure, the rules learned in practice, 
 | 4 | Merge and integrity checks, per part as it returns | `vt-merge` | new terms |
 | 5 | Checking passes: read-through, terms, attributions, external check, concordance | `vt-check` | disputed readings |
 | 6 | Apparatus: preface from a fact sheet, Translator's Note, appendices, figures | `vt-apparatus` | scope and contents |
-| 7 | Book | `vt-book` | design, sign-off |
+| 7 | Book: handover to [Vector Book](https://github.com/vector-humanities/vector-book) through `book.toml`, builds from the first chapter, design samples, proof | `vt-book` | design, sign-off |
 
 The coordinator skill, `vector-translation`, routes between them.
 

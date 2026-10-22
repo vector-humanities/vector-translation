@@ -1,0 +1,41 @@
+# Vector Book manifest for a translation (from vector-book starter/book.toml). Keys: vector-book docs/config.md. Handover: vector-book docs/handover.md.
+
+[book]
+title = "Title of the Book"
+author = "Author"
+original-title = ""          # the title in the source language, or remove
+credit = "A Vector Translation Project by Your Name"
+affiliation = "Institution"
+output = "book/book.pdf"
+credits = """
+Translated from the edition named here, with its library and identifier.
+
+Numbers in the outer margin give the pages of the source edition. Footnotes are the translator's; insertions into the source text are set in tortoise-shell brackets, 〔 〕.
+"""
+
+[design]
+template = "classic"
+cover = "plain"              # or "frame", with [cover] frame set below
+no-hyphen = []
+end-blanks = 0
+
+[sources]
+front = ["front/*.md"]
+body = ["text/readable/*.md"]
+back = ["back/*.md"]
+# glossary = "glossary.csv"
+
+[markers]
+page = '\[p\. (\d+)\]'
+strip = []
+
+[cover]
+paper = "#efe8d8"
+ink = "#1f1b16"
+accent = "#a8873c"
+# frame = { left = "", centre = "", right = "" }
+
+[back]
+blurb = """
+A paragraph about the book.
+"""

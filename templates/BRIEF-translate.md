@@ -42,6 +42,8 @@ If you meet a term that is not in the glossary and recurs, choose a rendering, u
 
 Section titles (use exactly): [list].
 
+Headings (both versions; the book is typeset from the readable files by Vector Book): a file that opens a chapter or a text starts with one level-one heading carrying its attributes, `# Title {num="Chapter 1" orig="Original title" run="Short running head"}`; sections within it are `## N. Title`. A translator's note on a title goes on the first sentence, not on the heading.
+
 ## Banned (both versions)
 [Paste the list from `AGENTS.md`: dashes, words, constructions.] No commentary of your own on how important or striking something is.
 
