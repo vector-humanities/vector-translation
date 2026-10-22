@@ -55,4 +55,4 @@ python3 tools/vt_assemble.py text/readable --front front --back back -o build/re
 
 First version, October 2026, distilled from one complete run. A German text from the Frankfurt School or its circle, in the public domain and not yet translated into English, is in preparation as the second.
 
-Licence: to be confirmed.
+Licence: [GNU General Public License v3.0](LICENSE).
