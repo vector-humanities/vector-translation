@@ -1,0 +1,27 @@
+{
+  "title": "Vector Translation: a method for translating books from page images with AI agents",
+  "upload_type": "software",
+  "description": "<p>Vector translation is a method for translating book-length texts from page images. A coordinating agent directs parallel AI sub-agents through the source under a shared brief; each passage is drafted as a literal version and as readable prose, and each version is checked against the other and against the page images. The translator writes the brief, settles the terms and conventions, and corrects.</p><p>This repository holds the method as a procedure, rules learned in practice, Claude Code skills for each stage, templates for briefs and records, and scripts for checking, applying changes, building a translation corpus and checking the typeset book. First used on Kuki Shūzō, <i>The Problem of Contingency</i> (1935). A Vector Humanities method, University of Sussex.</p>",
+  "creators": [
+    {
+      "name": "Berry, David M.",
+      "affiliation": "University of Sussex",
+      "orcid": "0000-0002-7737-5586"
+    }
+  ],
+  "keywords": [
+    "vector translation",
+    "translation",
+    "AI agents",
+    "digital humanities",
+    "vector humanities",
+    "critical theory"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://vector-humanities.github.io/vector-translation/",
+      "relation": "isDocumentedBy",
+      "resource_type": "other"
+    }
+  ]
+}
