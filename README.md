@@ -3,6 +3,7 @@
 <h1 align="center">Vector Translation</h1>
 <p align="center">A Vector Humanities method<br>
 <sub>David M. Berry, University of Sussex · <a href="https://vector-humanities.github.io/vector-translation/">vector-humanities.github.io/vector-translation</a></sub></p>
+<p align="center"><a href="https://doi.org/10.5281/zenodo.23715274"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23715274.svg" alt="DOI 10.5281/zenodo.23715274"></a></p>
 
 ---
 
@@ -55,5 +56,11 @@ python3 tools/vt_assemble.py text/readable --front front --back back -o build/re
 ## Status
 
 Version 0.1.1, October 2026, distilled from one complete run. A German text from the Frankfurt School or its circle, in the public domain and not yet translated into English, is in preparation as the second.
+
+## Citation
+
+Berry, D. M. (2026) *Vector Translation: a method for translating books from page images with AI agents*. Version 0.1.1. Zenodo. https://doi.org/10.5281/zenodo.23715275
+
+To cite every version, use the concept DOI, https://doi.org/10.5281/zenodo.23715274. `CITATION.cff` gives the same record for GitHub's "Cite this repository".
 
 Licence: [GNU General Public License v3.0](LICENSE).
