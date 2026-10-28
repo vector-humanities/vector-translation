@@ -13,11 +13,12 @@ Also record any other recurring term of the author's that the source renders in 
 
 ## Output (append each entry as you find it)
 1. `corpus/terms-[source-id].csv`, columns `source_term,rendering,translator,work,year,language,page,context,note,source_id,url`:
+   - `source_term`: the German term exactly as written in the Terms table, one term per row (no "X / Y" pairs, no comments in brackets), so the merge groups renderings correctly;
    - `source_id`: this source's ID in `corpus/SOURCES.md`; `url`: a URL to the page (archive, publisher) or a DOI, where one exists, otherwise empty;
    - `context`: the rendering in its sentence, at most fifteen words, in quotation marks;
    - `note`: where the source gives the original word, explains its choice, or renders the same term two ways.
-2. `corpus/style.md`, under a heading for this source: sentence length and joining; the author's punctuation (dashes, exclamations); compounds and coinages; emphasis; quotations and the original-language words kept; notes and brackets. One short example of each, with page.
-3. `corpus/finds.md`, under a heading for this source: identifications of people, works and quotations; readings of difficult passages; points where the source disagrees with another translation or with the original; errors you can show. Each with page, and the evidence.
+2. `corpus/style/[source-id].md` (one file per source, so that agents running in parallel never write to the same file): sentence length and joining; the author's punctuation (dashes, exclamations); compounds and coinages; emphasis; quotations and the original-language words kept; notes and brackets. One short example of each, with page.
+3. `corpus/finds/[source-id].md` (one file per source), with a section **Author quoted or translated** for every passage of the author's text the source quotes, translates or paraphrases (source page, the words, the author's page), then: identifications of people, works and quotations; readings of difficult passages; points where the source disagrees with another translation or with the original; errors you can show. Each with page, and the evidence.
 
 ## Rules
 - Quote at most fifteen words at a time. Never copy longer passages into any file.
