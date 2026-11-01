@@ -19,6 +19,7 @@ RESULT: VERIFIED | CORRECTED | UNVERIFIED
 SOURCE: <named source, with page or URL>
 OLD: <exact text>        (CORRECTED and UNVERIFIED only)
 NEW: <replacement>
+ORIGIN: internal
 ```
 
 End with `## Summary` (counts by result).

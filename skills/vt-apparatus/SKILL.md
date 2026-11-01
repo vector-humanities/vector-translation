@@ -13,13 +13,16 @@ Method §8; rule 14. Template: `templates/facts-sheet.md`.
 3. Draft from the fact sheet only. Nothing from the "could not be sourced" list goes in.
 
 ## Translator's Note
-Drafted for the translator to revise and sign: the text and printing; status (what has and has not been checked); the method in a paragraph; the conventions; debts to earlier translators and scholars. The translator's wording is final.
+Drafted for the translator to revise and sign: the text and printing; status (what has and has not been checked); the method in a paragraph; the conventions; debts to earlier translators and scholars; and which passages were checked by witnesses, by whom (from `checks/witness-*.md`), and which only by internal checks. The translator's wording is final.
 
 ## Corpus
 Translator's notes, the fact sheet and Appendix A draw on `corpus/finds.md` and the corpus tables, citing source and page.
 
+## The literal version
+Not part of the book. It is published as a file, the Markdown with its page markers, alongside the readable text in the repository and the deposit (method §9, rule 21). Before publication, check that it gives the source word in brackets at the first use of each glossary term in each section.
+
 ## Appendices
-- **A. Notes on translation choices**, for other translators: the core terms and why, attested alternatives from the corpus and the external check, conventions and their reasons, misprints kept.
+- **A. Notes on translation choices**, for other translators: the core terms and why, attested alternatives from the corpus and the witness checks, the witnesses' disagreements and how each was resolved, conventions and their reasons, misprints kept.
 - **B. Contents of the printing** with the real section pages (from the survey).
 - **C. Concordance** with the standard edition (from `vt-check`).
 - **D. Index of persons and works**, built by script from the literal with the translator's notes excluded; pages checked by script.

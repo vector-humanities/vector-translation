@@ -16,6 +16,7 @@ Write `changes-X.md`, appending as you go:
 OLD: <exact text, unique in the file>
 NEW: <replacement>
 SRC: <the source word as printed>
+ORIGIN: internal
 ```
 
 Same for `### literal`. End with `## Clashes` and `## Summary` (counts per term, per version).

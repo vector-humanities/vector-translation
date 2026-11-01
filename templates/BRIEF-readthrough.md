@@ -21,6 +21,7 @@ Write `fixes-X.md`, appending as you go:
 OLD: <exact substring of the readable file, unique in the whole file (8 to 30 words)>
 NEW: <corrected text, same register, minimal change>
 WHY: <ADDS | DROPS | CHANGES | RULE: one line, citing the literal wording>
+ORIGIN: internal
 ```
 
 OLD must match character for character, including note markers, italics and page markers.

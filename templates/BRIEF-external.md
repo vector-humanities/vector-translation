@@ -1,4 +1,4 @@
-# Brief: external check against existing translations and quotations
+# Brief: witness check against an earlier translation or quotations
 
 Sources: [list of existing translations and scholarship quoting the text, with the pages they quote].
 
@@ -11,4 +11,4 @@ For every passage quoted:
 5. Note page errors in the secondary literature as found.
 
 ## Output (do not edit the translation files)
-Write `external-check.md`: one entry per passage (source and page; our page; the readings; class; what the image shows; proposed change as an OLD/NEW pair if any). End with `## Attested alternatives` and `## Summary`.
+Write `checks/witness-<ID>.md` from `templates/witness.md`, with one entry per passage (source and page; our page; the readings; class; what the image shows; proposed change as an OLD/NEW pair if any, with `ORIGIN: witness <ID>`). End with `## Attested alternatives` and `## Summary`.

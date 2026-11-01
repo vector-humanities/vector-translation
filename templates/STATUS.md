@@ -17,9 +17,9 @@ Dated, one line each. Terms, register, conventions, contents, design. The transl
 -
 
 ## Provenance
-| Section | Drafted by | Checks passed | Decisions applied | Notes |
-|---|---|---|---|---|
-| | part A agent, date | pages, notes, banned, read-through | | |
+| Section | Drafted by | Internal checks passed | Witnessed by | Decisions applied | Notes |
+|---|---|---|---|---|---|
+| | part A agent, date | pages, notes, banned, read-through | witness IDs, or none | | |
 
 ## Costs
 | Stage | Agents | Tokens | Time |

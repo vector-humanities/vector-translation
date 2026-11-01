@@ -8,6 +8,7 @@ A change list is a sequence of entries:
     NEW: <replacement>
     SRC: <source wording>      (optional)
     WHY: <reason>              (optional)
+    ORIGIN: internal | witness <ID>
 
 Multi-line OLD or NEW text goes in ~~~ fences on the lines after the label:
 
@@ -25,6 +26,10 @@ With --write, entries whose OLD matches exactly once are applied in order,
 and a timestamped backup of each changed file is written first.
 Entries that match zero or several times are always refused.
 
+ORIGIN records where a change came from: "internal" for checks the agents
+ran on their own output, "witness <ID>" for a witness check. The report
+counts applicable entries by origin; an entry without ORIGIN is "unmarked".
+
 A Vector Book return file (proof/return-NN.md) can be given directly: the
 entries under each item's "- Proposed:" line are read, and the rest ignored.
 The Response lines in the return are still written by hand.
@@ -39,7 +44,7 @@ import time
 from pathlib import Path
 
 HEAD = re.compile(r"^###[ \t]+(\S+)[ \t]*(?:\|[ \t]*(.*))?$")
-FIELD = re.compile(r"^(OLD|NEW|SRC|JP|WHY):[ \t]?(.*)$")
+FIELD = re.compile(r"^(OLD|NEW|SRC|JP|WHY|ORIGIN):[ \t]?(.*)$")
 
 
 PROPOSED = re.compile(r"^([ \t]*)- Proposed:[ \t]*$", re.M)
@@ -122,6 +127,7 @@ def main():
     texts = {name: p.read_text(encoding="utf-8") for name, p in targets.items()}
     changed = set()
     ok = refused = 0
+    by_origin = {}
 
     for cf in args.changes:
         raw = Path(cf).read_text(encoding="utf-8")
@@ -146,9 +152,14 @@ def main():
             texts[e["target"]] = body.replace(e["OLD"], e["NEW"], 1)
             changed.add(e["target"])
             ok += 1
-            print(f"ok      {tag}")
+            words = e.get("ORIGIN", "").split()
+            origin = " ".join([words[0].lower()] + words[1:]) if words else "unmarked"
+            by_origin[origin] = by_origin.get(origin, 0) + 1
+            print(f"ok      {tag} ({origin})")
 
     print(f"\n{ok} applicable, {refused} refused")
+    for origin in sorted(by_origin):
+        print(f"  {origin}: {by_origin[origin]}")
     if not args.write:
         print("dry run: nothing written (use --write to apply)")
         return 1 if refused else 0

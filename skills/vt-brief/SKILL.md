@@ -9,7 +9,7 @@ Method §5; rules 2, 3, 10, 17. Template: `templates/BRIEF-translate.md`.
 
 ## Partition
 - From the survey's heading list, cut parts of about ten spreads, six to eight parts per batch. A part runs from its first heading to the next part's first heading.
-- Mark hard passages (verse, third-language quotation, logic or notation, dense terminology) for two independent literal drafts and a third comparing agent.
+- Mark hard passages (verse, third-language quotation, logic or notation, dense terminology) for two independent literal drafts and a third comparing agent. Record these as internal checks, "same model" or "other model"; they are not witnesses.
 
 ## Write the brief
 Copy the template to `batches/N/BRIEF.md` and fill every bracket: source access, page mapping, the boundaries table, the register page and literal model, the conventions, footnote labels, the glossary extract for the range, exact section titles, the banned list from `AGENTS.md`, the editor's notes required. The brief must be complete without this conversation: a sub-agent reads only the brief and the files it names.

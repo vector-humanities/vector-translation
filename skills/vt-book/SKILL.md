@@ -41,6 +41,9 @@ Apply the proposed change lists straight from the return: `python3 tools/vt_appl
 ## Post-design check
 `python3 tools/vt_bookcheck.py <book>` checks the typeset PDF against the translation's own text, independently of Vector Book: every word in order, every note, every heading. Run it when the translator asks, before marking a return ANSWERED, and before sign-off. With `--write` it records findings as `proof/check-NN.md`, LAYOUT items addressed to the book side, in the return format; tell the book side. Close each item after the rebuild that fixes it.
 
+## Publication of the literal
+The book stays readable-only. The literal version is published as a file, the Markdown with its page markers, alongside the readable text in the repository and the deposit (method §9, rule 21).
+
 ## Gates
 - **Text gate:** the translation checks pass and the translator signs off the text in `STATUS.md`; then set `handover = "final"`.
 - **Book gate:** `BUILD.md` clean, the latest post-design check with no open findings, every return and check in `proof/` CLOSED, then the translator signs off the book. The sign-off in `STATUS.md` records the date, the Vector Book commit from `BUILD.md` and the PDF, so that the signed-off book can be rebuilt exactly.

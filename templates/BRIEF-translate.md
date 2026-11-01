@@ -20,7 +20,7 @@ Your range runs from your first heading to the next part's first heading, wherev
 - Literal style: `[path, section]`.
 
 ## Two outputs, section by section, literal first
-1. **Literal** (`partX-literal.md`): close, sentence by sentence, keeping the author's sentence boundaries. No glosses, no joining, no added names. Translator's notes inline as [form].
+1. **Literal** (`partX-literal.md`): close, sentence by sentence, keeping the author's sentence boundaries. No glosses, no joining, no added names. Give the source word in brackets at the first use of each glossary term in each section. Translator's notes inline as [form]. This version is published with the readable text (rule 21), so write it for a reader of the source language as well as for checking.
 2. **Readable** (`partX-readable.md`): in the register of the model page. It contains only what the literal contains, except glosses in marked notes and insertions in marked brackets.
 
 ## Conventions (binding; from `conventions.md`)

@@ -22,3 +22,5 @@ Settle every item before the first batch (rule 11). The translator decides; reco
 | 16 | Footnote labels | `[^c3s8-4]` (chapter, section, number) | | | |
 | 17 | Figures | crop source, cleaning, caption form, English key or overlays | | | Kuki: uncleaned crops, English key, overlays where space allows |
 | 18 | Banned constructions and words | the list in `AGENTS.md` | | | |
+| 19 | Publication of the literal version | a file, the Markdown with its page markers, alongside the readable text in the repository and the deposit (rule 21); facing pages a later option | | | Kuki: held in the private repository, not yet published |
+| 20 | Source words in the literal | in brackets at the first use of each glossary term in each section (rule 21); bracket form to match row 5 | | | |

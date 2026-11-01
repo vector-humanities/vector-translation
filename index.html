@@ -76,9 +76,11 @@
         <h2>The method</h2>
       </div>
       <div class="prose indent reveal">
-        <p>Agents work through the page images of a book in parallel, each on a range bounded by the author's headings, under a shared brief that fixes the glossary, the register and the conventions. Each passage is drafted twice: a literal version, sentence by sentence, for quotation and checking, and a readable version in continuous English prose.</p>
+        <p>Agents work through the page images of a book in parallel, each on a range bounded by the author's headings, under a shared brief that fixes the glossary, the register and the conventions. Each passage is drafted twice: a literal version, sentence by sentence, published with the readable text, and a readable version in continuous English prose.</p>
         <p>Each version is checked against the other and against the page images. One coordinating agent merges the parts and applies corrections; every other agent returns its corrections as a change list and does not write to the master files.</p>
         <p>The translator writes the brief, settles the terms and conventions, reads samples against the source and signs off. These decisions are dated and logged with the translation.</p>
+        <h3>Disassembly and reassembly</h3>
+        <p>Vector translation borrows a working comparison from software reverse engineering, where coding agents now drive decompilers to take a compiled program apart and rebuild source code that behaves like it, tested against the original. A vector translation takes a text apart and reassembles it in another language. The literal version stands where the disassembly listing stands: close to the source, sentence by sentence, and kept. The readable version is the reconstructed source. The brief and the glossary do the work of naming, fixing what each part of the text is called before anything is rebuilt. The translation corpus works like a signature library, a record of renderings already attested. The checks take the place of tests. The comparison also marks a limit. A reconstruction judged only by whether it runs drifts towards the usual code of its kind, and a translation judged only by how well it reads in English drifts towards default English. The literal version is therefore published with the readable text, and the checks that weigh most are made from outside the agents: by readers of the source language, by earlier translators, and by independent second drafts.</p>
       </div>
       <ol class="stages indent reveal">
         <li><b>Source survey</b><span>Edition, printing and rights; page images at full resolution; the mapping from image to printed page; every page seen at contact-sheet size; existing translations and scholarship that quotes the text.</span></li>
@@ -104,12 +106,13 @@
         <li><b>Translate from the images</b><span>OCR of the pre-war vertical Japanese read <span class="jp-inline">偶然</span> as <span class="jp-inline">借然</span>. It served only for searching.</span></li>
         <li><b>Survey every page first</b><span>The printed contents gave wrong section pages throughout and left out the author's own preface, which turned up at the book-design stage.</span></li>
         <li><b>Fix core terms before the pilot</b><span><span class="jp-inline">存在</span> and <span class="jp-inline">有</span> were both rendered "being", the default of the English corpus, for two chapters until an existing draft separated existence from being. The change needed a pass over the whole book.</span></li>
-        <li><b>The readable adds nothing absent from the literal</b><span>The read-through found 106 faults, mostly added inference words, dropped hedges and moved emphasis. It now runs on each part as it returns.</span></li>
+        <li><b>The readable adds nothing absent from the literal</b><span>The read-through found 116 faults, mostly added inference words, dropped hedges and moved emphasis. It now runs on each part as it returns.</span></li>
         <li><b>Never drop the literal version</b><span>It was dropped for one chapter and had to be restarted. Every later correction to the readable text was found through it.</span></li>
         <li><b>Mark every addition</b><span>Translator's notes are footnotes beginning "Tr."; insertions into the author's sentences go in brackets <span class="jp-inline">〔 〕</span>.</span></li>
         <li><b>Check attributions as a pass of their own</b><span>Agents supply names and dates in notes. Any that cannot be verified against a named source is deleted.</span></li>
         <li><b>Decide conventions once</b><span>Footnotes or inline glosses, brackets, citation form and verse each changed during the first run, and each change was retrofitted across finished chapters.</span></li>
         <li><b>Scripts check everyone</b><span>A pattern in the coordinator's own merge script folded footnote definitions into paragraphs, and banned words came from the coordinator as well as the agents.</span></li>
+        <li><b>Publish the literal version</b><span>Two Japanese terms were both rendered "being" for two chapters and the readable text read smoothly; only a reader with the source found the drift. The literal is now published as a file with the readable text, with the source word at the first use of each glossary term.</span></li>
         <li><b>Build the book from the first chapter</b><span>Tables that could not break across pages, notes lost from captions and missing glyphs all surfaced at the end.</span></li>
       </ol>
       <p class="src-link"><a href="https://github.com/vector-humanities/vector-translation/blob/main/method/rules.md">method/rules.md</a></p>
@@ -158,7 +161,7 @@
           <h3>Tools</h3>
           <p>Five scripts in the Python standard library, run by the coordinator.</p>
           <dl>
-            <dt>vt_apply.py</dt><dd>Applies change lists. Each OLD must match its file exactly once; a dry run reports the matches before anything is written.</dd>
+            <dt>vt_apply.py</dt><dd>Applies change lists. Each OLD must match its file exactly once; a dry run reports the matches, by origin (internal checks or witnesses), before anything is written.</dd>
             <dt>vt_check.py</dt><dd>Page markers continuous, footnotes paired, dashes and banned words, competing renderings of each term in <code>glossary.csv</code>.</dd>
             <dt>vt_assemble.py</dt><dd>Joins section files, front matter and back matter into the master files, dropping working notes.</dd>
             <dt>vt_corpus.py</dt><dd>Merges the corpus term tables and reports each term's attested renderings, with their sources, against the glossary.</dd>
@@ -192,7 +195,7 @@
             <div><b>14</b><span>parts, two batches of seven</span></div>
             <div><b>96,000</b><span>words, readable version (about)</span></div>
             <div><b>470</b><span>translator's notes (about)</span></div>
-            <div><b>106</b><span>read-through fixes</span></div>
+            <div><b>116</b><span>read-through fixes</span></div>
             <div><b>22</b><span>figures</span></div>
             <div><b>250</b><span>pages, typeset book</span></div>
             <div><b>4.8M</b><span>tokens of background agent work</span></div>

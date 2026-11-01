@@ -11,12 +11,16 @@ Vector translation is a method for translating book-length texts from page image
 
 This repository holds the method as a procedure, the rules learned in practice, Claude Code skills for each stage, templates for briefs and records, and small scripts for checking and applying changes. It was first used on Kuki Shūzō's 偶然性の問題 (*The Problem of Contingency*, 1935), translated in October 2026 ([case study](method/case-kuki.md)).
 
+## Disassembly and reassembly
+
+Vector translation borrows a working comparison from software reverse engineering, where coding agents now drive decompilers to take a compiled program apart and rebuild source code that behaves like it, tested against the original. A vector translation takes a text apart and reassembles it in another language. The literal version stands where the disassembly listing stands: close to the source, sentence by sentence, and kept. The readable version is the reconstructed source. The brief and the glossary do the work of naming, fixing what each part of the text is called before anything is rebuilt. The translation corpus works like a signature library, a record of renderings already attested. The checks take the place of tests. The comparison also marks a limit. A reconstruction judged only by whether it runs drifts towards the usual code of its kind, and a translation judged only by how well it reads in English drifts towards default English. The literal version is therefore published with the readable text, and the checks that weigh most are made from outside the agents: by readers of the source language, by earlier translators, and by independent second drafts.
+
 ## Contents
 
 | | |
 |---|---|
 | [`method/method.md`](method/method.md) | The procedure, stage by stage, with a checklist |
-| [`method/rules.md`](method/rules.md) | Twenty-one rules, each with the incident behind it |
+| [`method/rules.md`](method/rules.md) | Twenty-two rules, each with the incident behind it |
 | [`method/languages/`](method/languages/) | Notes for [Japanese](method/languages/japanese.md) and [German](method/languages/german.md) sources |
 | [`method/case-kuki.md`](method/case-kuki.md) | The first run, in figures |
 | [`skills/`](skills/) | Claude Code skills: a coordinator and one per stage |

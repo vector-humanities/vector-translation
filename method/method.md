@@ -54,6 +54,7 @@ Skill: `vt-pilot`. Decision sheet: `templates/conventions.md`. Glossary: `templa
 
 - One file per section in `text/literal/` and `text/readable/`, numbered in reading order. Front matter, appendices and glossary are separate files. `tools/vt_assemble.py` builds the two master files and the book input from them.
 - The literal version is the master. The readable version may contain nothing absent from the literal except marked glosses and marked insertions.
+- Both versions are published (§9). The literal is written for readers of the source language as well as for checking: it gives the source word in brackets at the first use of each glossary term in each section (rule 21).
 - Page markers `[p. N]` where each printed page begins, so that every passage has a stable reference (page plus paragraph) for change lists, notes and concordance anchors.
 - `STATUS.md` holds the edition, the decisions log, provenance (which agent drafted each section, which checks it passed) and costs per stage.
 
@@ -63,7 +64,7 @@ Skill: `vt-brief`. Template: `templates/BRIEF-translate.md`.
 
 1. **Partition by headings**, using the survey: about ten spreads per part, six to eight parts per batch. A part runs from its first heading to the next part's first heading, wherever on the page each falls.
 2. **The brief** gives source access and the page mapping, the boundaries, the approved register page and literal model, the two outputs (literal first), the conventions, unique footnote labels, the banned constructions, the glossary extract and exact section titles, and the editor's notes each agent returns. Agents append each section to their files as they finish it.
-3. **Hard passages** (verse, classical quotation, logic notation, dense terminology) get two independent literal drafts and a third agent to compare them.
+3. **Hard passages** (verse, classical quotation, logic notation, dense terminology) get two independent literal drafts and a third agent to compare them. These are internal checks, recorded as "same model" or, for a different model family, "other model" (§7).
 4. **Launch the batch together** as background agents. Forward boundary reports to neighbouring parts at once.
 5. **Mid-run changes** go in a dated `CHANGE` section at the end of the brief, and every running agent is messaged.
 
@@ -85,20 +86,30 @@ Then run a read-through of that part, readable against literal (7.2), while the 
 
 Skill: `vt-check`. Templates: `templates/BRIEF-readthrough.md`, `BRIEF-terms.md`, `BRIEF-attribution.md`, `BRIEF-external.md`, `change-list.md`.
 
+Checks are of two kinds, recorded apart.
+
+- **Internal checks** are those the agents run on their own output: the integrity checks (`vt_check.py`), the terminology pass, the read-through, the attribution pass, the concordance, and second drafts of hard passages, whether by the same model ("same model") or by another model family ("other model", which still shares the corpus). Their counts go in `STATUS.md`.
+- **Witness checks** are readings from outside the agents' series: human readers with the source, earlier translations, and the translator's sample review (§10). A witness counts only if it made its reading without seeing the agents' drafts. Each witness has its own record, `checks/witness-NN.md` (template `templates/witness.md`), and the provenance table in `STATUS.md` names the witnesses for each section.
+
 Checkers work in parallel over ranges and return change lists in this form (every OLD must match its file exactly once; multi-line text in `~~~` fences):
 
 ```
 ### readable | p. 123
 OLD: <exact text>
 NEW: <replacement>
-SRC: <the source wording>    (terms and external passes)
+SRC: <the source wording>    (terms and witness checks)
 WHY: <reason>                (read-through and attribution passes)
+ORIGIN: internal | witness <ID>
 ```
+
+`vt_apply.py` reports the changes applied by origin.
+
+Passes 1, 2, 3 and 5 are internal; pass 4 is the witness check.
 
 1. **Terminology pass**, whenever a core term changes: every candidate word checked against the image; only what translates the term in question is changed.
 2. **Read-through**, readable against literal, per part: ADDS, DROPS, CHANGES (sense, hedge, modality, attribution of a view) and RULE (house style). Problems in the literal go in a separate list.
 3. **Attribution pass**: every name, date and identification in the translator's notes checked against a named source or the reference manager. What cannot be verified is deleted, not hedged.
-4. **External check**: every passage quoted in existing translations or scholarship compared, differences resolved against the image, attested alternatives recorded in the translation-choices appendix.
+4. **Witness checks**: each witness's reading compared with ours, passage by passage, differences resolved against the image, the witness recorded in `checks/witness-NN.md`, and attested alternatives recorded in the translation-choices appendix. Witnesses are: earlier translations and quotations from the translation corpus, aligned by page; human readers of the source language, each named with what they read and what they had not seen; and the translator's sample review (§10).
 5. **Concordance** with the standard edition, from every page reference the literature gives with a quotation; anchors graded HIGH, MEDIUM, LOW; a locating rule of thumb, labelled not for citation.
 
 ## 8. Apparatus
@@ -106,8 +117,9 @@ WHY: <reason>                (read-through and attribution passes)
 Skill: `vt-apparatus`. Template: `templates/facts-sheet.md`.
 
 - **Preface** written from a sourced fact sheet: every fact tied to a source and page, a list of disagreements between sources, a list of what could not be sourced (kept out of the preface). The translator sets scope and length.
-- **Translator's Note**, signed by the translator: status, method, conventions, debts.
-- **Appendices**: notes on translation choices for other translators; contents of the printing with real section pages; concordance; index of persons and works (built from the literal with the translator's notes excluded, pages checked by script); glossary.
+- **Translator's Note**, signed by the translator: status, method, conventions, debts, and which passages were checked by witnesses, by whom, and which only by internal checks.
+- **The literal version** is not part of the book; it is published as a file alongside it (§9).
+- **Appendices**: notes on translation choices for other translators, with the witnesses' disagreements and how each was resolved; contents of the printing with real section pages; concordance; index of persons and works (built from the literal with the translator's notes excluded, pages checked by script); glossary.
 - **Figures**: found from the contact sheet, cropped at full resolution, a gentle contrast curve that keeps marks, a manifest with placement, caption and an English key. Measure label positions for any English overlays when the figures are first cropped.
 
 ## 9. Book
@@ -120,12 +132,13 @@ Skill: `vt-book`. Tool: [Vector Book](https://github.com/vector-humanities/vecto
 - **Design.** `vbook samples` sets the book in each template; the translator chooses, and the choice goes in `[design]` and in `STATUS.md`. Covers can follow the typography of the edition translated; do not reproduce a publisher's name the edition does not carry.
 - **Returns.** When the book side finds a fault it sends a return, `proof/return-NN.md`, in the format of Vector Book's `docs/handover.md` (Returns; blank in `templates/return.md`). Each item has a kind (MARKUP, TEXT, QUERY, SOURCES, LAYOUT, OTHER), a location (file and line, the source page, the PDF page) and the evidence, and may propose a change list. The translation side answers every item in the same file (FIXED, CHANGED-OTHERWISE, QUERY-TO-TRANSLATOR, DECLINED, NOTED): MARKUP and SOURCES items are applied; TEXT items are checked against the literal and the source first; QUERY and OTHER items go to the translator. Proposed change lists are applied straight from the return file with `vt_apply.py`, literal and readable together. Then the post-design check, `vbook check --report`, a commit, Status ANSWERED, and a message to the book side, which rebuilds and closes or reopens each item.
 - **Post-design check.** `tools/vt_bookcheck.py <book>` compares the typeset PDF with the translation's own text, independently of Vector Book: every word in order, every note, every heading, with each difference located by file and source page. It runs when the translator asks, before every return is marked ANSWERED, and before the book is signed off. Findings go to the book side as `proof/check-NN.md` (`--write`), in the return format, as LAYOUT items.
+- **Publication.** The literal version is published as a file, the Markdown with its page markers, alongside the readable text in the repository and in the deposit (rule 21). It is not typeset; facing pages remain a later option.
 - **Text gate.** Before a final handover, the translation checks pass and the translator signs off the text in `STATUS.md`.
 - **Book gate.** The book is final when `BUILD.md` reports no faults, the latest post-design check has no open findings, every return and check in `proof/` is CLOSED, and the translator signs off the book. The sign-off in `STATUS.md` records the date, the Vector Book commit from `BUILD.md` and the PDF, so that the signed-off book can be rebuilt exactly.
 
 ## 10. Evaluation
 
-- **Sample review**: the translator reads one page per chapter against the image and logs errors by type. This measures the pipeline rather than assuming it.
+- **Sample review**: the translator reads one page per chapter against the image and logs errors by type. This measures the pipeline rather than assuming it, and is recorded as a witness check (§7.4).
 - **Provenance and costs** in `STATUS.md`, kept as the run goes, so the method can be described exactly in the Translator's Note.
 
 ## 11. Checklist
@@ -140,8 +153,10 @@ Skill: `vt-book`. Tool: [Vector Book](https://github.com/vector-humanities/vecto
 - [ ] Brief written; parts partitioned by headings; hard passages assigned double drafts
 - [ ] Batch launched; boundary reports forwarded
 - [ ] Each part checked on return (pages, notes, banned words, terms) and read through
-- [ ] Terminology, attribution and external passes applied; concordance built
+- [ ] Terminology and attribution passes applied; concordance built
+- [ ] Witness checks recorded, one file per witness; Translator's Note states what was witnessed
 - [ ] Book built from the first chapter, rebuilt after each merge; glyph sweep clean
 - [ ] Fact sheet, Preface, Translator's Note, appendices, index, figures
 - [ ] Sample review by the translator; provenance and costs recorded
+- [ ] Literal version published as a file with the readable text, in the repository and the deposit
 - [ ] On the translator's sign-off: `corpus/texts/` removed, history included
