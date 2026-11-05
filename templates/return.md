@@ -16,12 +16,12 @@ Kinds: MARKUP, TEXT, QUERY, SOURCES, LAYOUT, OTHER. Responses: FIXED, CHANGED-OT
 
 ## R1 · TEXT · Short title of the fault
 
-- Where: `text/readable/03-section-3.md:41`, after [p. 57]; PDF p. 23
+- Where: `text/translation/03-section-3.md:41`, after [p. 57]; PDF p. 23
 - Found by: proof
 - Evidence: what the page shows, quoted exactly.
 - Proposed:
   ~~~
-  ### readable | p. 57
+  ### translation | p. 57
   OLD: <exact text, matching once>
   NEW: <replacement>
   WHY: <reason>

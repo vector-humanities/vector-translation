@@ -13,7 +13,7 @@ For each, find a named source: the reference manager first, then an authority fi
 Write `attributions-X.md`, appending as you go:
 
 ```
-### readable | [^label]
+### translation | [^label]
 CLAIM: <the claim>
 RESULT: VERIFIED | CORRECTED | UNVERIFIED
 SOURCE: <named source, with page or URL>

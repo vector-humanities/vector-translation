@@ -27,16 +27,16 @@ Drift is visible in counts before it is visible in reading. `vt_check.py --gloss
 **6. Agree the register on a page, not a description.**
 A list of style rules produced varied results across agents. One page revised by the translator and given as the model does better.
 
-**7. The readable version adds nothing absent from the literal.**
-The read-through of the whole book found 116 faults in the readable version. None reversed the argument; most were added inference words ("therefore" where the source has "and"), dropped hedges and moved emphasis. Glosses go in marked notes, insertions in marked brackets, and nothing else is added.
+**7. The translation adds nothing absent from the literal.**
+The read-through of the whole book found 116 faults in the translation. None reversed the argument; most were added inference words ("therefore" where the source has "and"), dropped hedges and moved emphasis. Glosses go in marked notes, insertions in marked brackets, and nothing else is added.
 
 **8. Never drop the literal version, and make it the master.**
-The literal version was skipped for one chapter to save time and had to be restarted. Every later correction to the readable text was found by comparing it with the literal.
+The literal version was skipped for one chapter to save time and had to be restarted. Every later correction to the translation was found by comparing it with the literal.
 
 **9. Run the read-through per part, as parts return.**
 On the first run it came at the end, as a separate stage over the whole book. Run per part, it finds faults while the brief can still be corrected for the parts not yet drafted.
 
-**10. Literal and readable versions from one agent are not independent.**
+**10. The literal version and the translation from one agent are not independent.**
 Both versions come from the same reading, so comparing them cannot catch a misreading they share. Hard passages (verse, classical quotation, logic notation) get two independent literal drafts and a third agent to compare them. These remain internal checks: a second draft by the same model is recorded as "same model", and one by a different model family as "other model", which still shares the corpus. Witnesses are human readers with the source, earlier translations, and the translator's sample review (method §7.4).
 
 ## Conventions
@@ -75,5 +75,5 @@ The first push of the Kuki repository included the private working log, email ad
 **20. Third-party scholarship stays out of public repositories.**
 Copyrighted secondary material used for checking, and the full texts of the translation corpus, are kept in the translation's private repository and never committed to a public one. The corpus texts are removed, from the history too, once the translator signs off the translation, and only after two separate commands from the translator, so that a mistaken instruction cannot delete them.
 
-**21. Publish the literal version with the readable one.**
-Two Japanese terms, 存在 and 有, were rendered "being" for two chapters, the default of the English philosophical corpus, and the readable text read smoothly throughout. No check the agents ran on their own output found the drift; a specialist's draft of the opening section, made outside the run, showed it. A text judged by how well it reads in English pulls towards default English, and only a reader with the source in hand can see where it has. The literal version is published as a file, the Markdown with its page markers, alongside the readable text in the repository and in the deposit, and gives the source word in brackets at the first use of each glossary term in each section, so that a reader of the source language can follow the renderings. The bracket for source words differs from the bracket for the translator's insertions (conventions, row 5), so that a reader can tell a source word from an insertion: on Kuki, insertions in 〔 〕 and source words in [ ]. It is not set as a book; facing pages remain a later option.
+**21. Publish the literal version with the translation.**
+Two Japanese terms, 存在 and 有, were rendered "being" for two chapters, the default of the English philosophical corpus, and the translation read smoothly throughout. No check the agents ran on their own output found the drift; a specialist's draft of the opening section, made outside the run, showed it. A text judged by how well it reads in English pulls towards default English, and only a reader with the source in hand can see where it has. The literal version is published as a file, the Markdown with its page markers, alongside the translation in the repository and in the deposit, and gives the source word in brackets at the first use of each glossary term in each section, so that a reader of the source language can follow the renderings. The bracket for source words differs from the bracket for the translator's insertions (conventions, row 5), so that a reader can tell a source word from an insertion: on Kuki, insertions in 〔 〕 and source words in [ ]. It is not set as a book; facing pages remain a later option.

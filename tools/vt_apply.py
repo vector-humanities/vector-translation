@@ -3,7 +3,7 @@
 
 A change list is a sequence of entries:
 
-    ### readable | p. 123
+    ### translation | p. 123
     OLD: <exact text>
     NEW: <replacement>
     SRC: <source wording>      (optional)
@@ -19,7 +19,9 @@ Multi-line OLD or NEW text goes in ~~~ fences on the lines after the label:
     ~~~
 
 The word after ### names the target, mapped to a file with --target name=path
-(for example --target readable=text/readable.md --target literal=text/literal.md).
+(for example --target translation=text/translation.md --target literal=text/literal.md).
+"readable", the old name for the translation (renamed 2026-11-05), is still
+accepted, as a target in a change list and in --target.
 
 Dry run by default: every entry is checked and reported, nothing is written.
 With --write, entries whose OLD matches exactly once are applied in order,
@@ -45,6 +47,15 @@ from pathlib import Path
 
 HEAD = re.compile(r"^###[ \t]+(\S+)[ \t]*(?:\|[ \t]*(.*))?$")
 FIELD = re.compile(r"^(OLD|NEW|SRC|JP|WHY|ORIGIN):[ \t]?(.*)$")
+
+
+# Old target names, still accepted: "readable" was renamed "translation" on 2026-11-05.
+ALIASES = {"readable": "translation"}
+
+
+def target_name(name):
+    name = name.lower()
+    return ALIASES.get(name, name)
 
 
 PROPOSED = re.compile(r"^([ \t]*)- Proposed:[ \t]*$", re.M)
@@ -86,7 +97,7 @@ def parse(text):
         line = lines[i]
         m = HEAD.match(line)
         if m:
-            cur = {"target": m.group(1).lower(), "where": (m.group(2) or "").strip(), "line": i + 1}
+            cur = {"target": target_name(m.group(1)), "where": (m.group(2) or "").strip(), "line": i + 1}
             entries.append(cur)
             i += 1
             continue
@@ -122,7 +133,7 @@ def main():
         name, _, path = t.partition("=")
         if not path:
             sys.exit(f"--target needs NAME=PATH, got {t!r}")
-        targets[name.lower()] = Path(path)
+        targets[target_name(name)] = Path(path)
 
     texts = {name: p.read_text(encoding="utf-8") for name, p in targets.items()}
     changed = set()

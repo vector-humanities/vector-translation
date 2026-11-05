@@ -16,7 +16,7 @@ A witness check is a reading from outside the agents' series. Witnesses are huma
 ### p. [N]
 - Witness reading: [at most fifteen words, or a summary]
 - Our literal: [ ]
-- Our readable: [ ]
+- Our translation: [ ]
 - Class: AGREES / COMPATIBLE / DIFFERS
 - The image shows: [ ]
 - Resolution: [kept / changed, with the change list entry (`ORIGIN: witness [ID]`) / alternative recorded in Appendix A]

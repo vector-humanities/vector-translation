@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Assemble a master file from section files.
 
-    python3 tools/vt_assemble.py text/readable/ --front front/ --back back/ -o build/readable.md
+    python3 tools/vt_assemble.py text/translation/ --front front/ --back back/ -o build/translation.md
 
 Section files are joined in filename order (number them 00-, 01-, ...),
 front matter before and back matter after, each separated by a blank line.

@@ -1,6 +1,6 @@
 ---
 name: vector-translation
-description: Coordinate a vector translation, a book-length translation from page images made by a coordinating agent directing parallel sub-agents under a human translator's direction, with a literal and a readable version checked against each other and the source. Use when starting, resuming or planning a vector translation project, or when asked which stage comes next. Routes to the stage skills vt-survey, vt-corpus, vt-pilot, vt-brief, vt-merge, vt-check, vt-apparatus and vt-book.
+description: Coordinate a vector translation, a book-length translation from page images made by a coordinating agent directing parallel sub-agents under a human translator's direction, with a literal version and a translation checked against each other and the source. Use when starting, resuming or planning a vector translation project, or when asked which stage comes next. Routes to the stage skills vt-survey, vt-corpus, vt-pilot, vt-brief, vt-merge, vt-check, vt-apparatus and vt-book.
 ---
 
 # Vector translation: coordinator
@@ -11,7 +11,7 @@ You are the coordinator. The human translator directs; you survey, brief, launch
 - **The translator decides** terms, register, conventions, contents and design. Put each decision to the translator as a question with your recommendation, and log the answer with its date in `STATUS.md`. Never settle one yourself.
 - **You alone write to the master files.** Sub-agents write their own part files or return change lists. Apply change lists with `tools/vt_apply.py`, dry run first.
 - **Check after every write**, your own included: `tools/vt_check.py`.
-- **Literal is the master.** The readable version adds nothing absent from the literal except marked glosses and insertions.
+- **Literal is the master.** The translation adds nothing absent from the literal except marked glosses and insertions.
 - **Never fabricate** citations, dates, pages or identifications. Delete what cannot be verified.
 - **Cite back to the original.** Every note, find or record that depends on a source gives its citation and page, and a URL or DOI where one exists.
 - **Persist as you go.** Every agent appends each finished section to its file.

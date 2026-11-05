@@ -21,7 +21,7 @@ end-blanks = 0
 
 [sources]
 front = ["front/*.md"]
-body = ["text/readable/*.md"]
+body = ["text/translation/*.md"]
 back = ["back/*.md"]
 # glossary = "glossary.csv"
 

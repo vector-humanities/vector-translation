@@ -17,7 +17,7 @@ From the Kuki translation (pre-war Iwanami printing, vertical text, old orthogra
 - Emphasis dots (圏点) as italics. 甲, 乙, 丙 as A, B, C.
 - Insertions into the author's sentences in tortoise-shell brackets 〔 〕, the Japanese editorial convention for insertions by an editor or quoter. The author's own )( sign was considered and rejected because Kuki uses it himself.
 - The author's references stayed inline, as printed, so every footnote was the translator's and began "Tr.".
-- Verse and classical Chinese: original as printed, the author's reading, and a close English translation in a footnote; the readable body keeps the English.
+- Verse and classical Chinese: original as printed, the author's reading, and a close English translation in a footnote; the body of the translation keeps the English.
 - Quotations of European authors translated from the author's Japanese, not from the originals, since the Japanese is what the author argued from.
 - 我々 as "we"; 思ふ as "I think". Hedges such as であらう kept as hedges.
 

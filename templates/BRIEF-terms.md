@@ -12,7 +12,7 @@ The translator has decided (date): [source term] = [English], [source term] = [E
 Write `changes-X.md`, appending as you go:
 
 ```
-### readable | p. N
+### translation | p. N
 OLD: <exact text, unique in the file>
 NEW: <replacement>
 SRC: <the source word as printed>

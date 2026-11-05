@@ -1,9 +1,9 @@
-# Brief: read-through, readable against literal, [range]
+# Brief: read-through, translation against literal, [range]
 
-Files: `[literal]` (the reference) and `[readable]`. Conventions as in `conventions.md`. Page images for disputes: `[path]`, mapping [formula].
+Files: `[literal]` (the reference) and `[translation]`. Conventions as in `conventions.md`. Page images for disputes: `[path]`, mapping [formula].
 
 ## Task
-Go paragraph by paragraph, aligning the versions by their `[p. N]` markers. Find places where the READABLE version:
+Go paragraph by paragraph, aligning the versions by their `[p. N]` markers. Find places where the TRANSLATION:
 
 1. **ADDS** a claim, example, name, date, qualification, contrast or interpretation absent from the literal: a gloss that belongs in a note; a reformulation that says more than the author; a contrast the author does not make; an inference word ("therefore", "thus") where the literal has a plain connective; a closing sentence that restates significance.
 2. **DROPS** a sentence, clause, qualification, example, citation, page reference or emphasis present in the literal.
@@ -17,8 +17,8 @@ Joined sentences, reordered clauses and reformulations that restate the author w
 Write `fixes-X.md`, appending as you go:
 
 ```
-### readable | p. N
-OLD: <exact substring of the readable file, unique in the whole file (8 to 30 words)>
+### translation | p. N
+OLD: <exact substring of the translation file, unique in the whole file (8 to 30 words)>
 NEW: <corrected text, same register, minimal change>
 WHY: <ADDS | DROPS | CHANGES | RULE: one line, citing the literal wording>
 ORIGIN: internal

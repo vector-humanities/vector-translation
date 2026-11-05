@@ -7,13 +7,13 @@
 
 ---
 
-Vector translation is a method for translating book-length texts from page images. A coordinating agent directs parallel AI sub-agents through the source under a shared brief. Each passage is drafted twice, as a literal version sentence by sentence and as readable prose, and each version is checked against the other and against the page images. The translator writes the brief, settles the terms and conventions, and corrects.
+Vector translation is a method for translating book-length texts from page images. A coordinating agent directs parallel AI sub-agents through the source under a shared brief. Each passage is drafted twice, as a literal translation, sentence by sentence, and as the translation, in continuous prose, and each version is checked against the other and against the page images. The translator writes the brief, settles the terms and conventions, and corrects.
 
 This repository holds the method as a procedure, the rules learned in practice, Claude Code skills for each stage, templates for briefs and records, and small scripts for checking and applying changes. It was first used on Kuki Shūzō's 偶然性の問題 (*The Problem of Contingency*, 1935), translated in October 2026 ([case study](method/case-kuki.md)).
 
 ## Disassembly and reassembly
 
-Vector translation borrows a working comparison from software reverse engineering, where coding agents now drive decompilers to take a compiled program apart and rebuild source code that behaves like it, tested against the original. A vector translation takes a text apart and reassembles it in another language. The literal version stands where the disassembly listing stands: close to the source, sentence by sentence, and kept. The readable version is the reconstructed source. The brief and the glossary do the work of naming, fixing what each part of the text is called before anything is rebuilt. The translation corpus works like a signature library, a record of renderings already attested. The checks take the place of tests. The comparison also marks a limit. A reconstruction judged only by whether it runs drifts towards the usual code of its kind, and a translation judged only by how well it reads in English drifts towards default English. The literal version is therefore published with the readable text, and the checks that weigh most are made from outside the agents: by readers of the source language, by earlier translators, and by independent second drafts.
+Vector translation borrows a working comparison from software reverse engineering, where coding agents now drive decompilers to take a compiled program apart and rebuild source code that behaves like it, tested against the original. A vector translation takes a text apart and reassembles it in another language. The literal version stands where the disassembly listing stands: close to the source, sentence by sentence, and kept. The translation is the reconstructed source. The brief and the glossary do the work of naming, fixing what each part of the text is called before anything is rebuilt. The translation corpus works like a signature library, a record of renderings already attested. The checks take the place of tests. The comparison also marks a limit. A reconstruction judged only by whether it runs drifts towards the usual code of its kind, and a translation judged only by how well it reads in English drifts towards default English. The literal version is therefore published with the translation, and the checks that weigh most are made from outside the agents: by readers of the source language, by earlier translators, and by independent second drafts.
 
 ## Contents
 
@@ -50,9 +50,9 @@ Copy the skill folders into a project's `.claude/skills/` (or `~/.claude/skills/
 ## Tools
 
 ```bash
-python3 tools/vt_check.py text/readable.md --glossary glossary.csv
-python3 tools/vt_apply.py fixes-*.md --target readable=text/readable.md --target literal=text/literal.md
-python3 tools/vt_assemble.py text/readable --front front --back back -o build/readable.md
+python3 tools/vt_check.py text/translation.md --glossary glossary.csv
+python3 tools/vt_apply.py fixes-*.md --target translation=text/translation.md --target literal=text/literal.md
+python3 tools/vt_assemble.py text/translation --front front --back back -o build/translation.md
 ```
 
 `vt_apply.py` is a dry run unless given `--write`, and refuses any change whose old text does not match exactly once.

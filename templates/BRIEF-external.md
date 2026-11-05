@@ -4,7 +4,7 @@ Sources: [list of existing translations and scholarship quoting the text, with t
 
 ## Task
 For every passage quoted:
-1. Locate it in our literal and readable versions by page.
+1. Locate it in our literal version and our translation by page.
 2. Compare the readings. Classify: AGREES; COMPATIBLE (different English, same sense); DIFFERS.
 3. For DIFFERS, read the page image and say which reading the source supports, and why.
 4. Record attested alternatives a reader might meet, for the translation-choices appendix.

@@ -5,7 +5,7 @@ This repository holds a vector translation of [author, title, edition]. Read thi
 ## Ground rules
 1. **The translator decides.** Terms, register, conventions and contents are the translator's decisions. Propose; do not settle them. Raise questions in an issue or in your report.
 2. **Translate from the images.** Source: `source/[...]`. [OCR status.] Page mapping: [formula]. Section boundaries follow the headings on the page.
-3. **Literal is the master.** Every change to the readable version must be supported by the literal, and the literal by the image. The readable version contains nothing absent from the literal except marked glosses and marked insertions. If you change one, check the other.
+3. **Literal is the master.** Every change to the translation must be supported by the literal, and the literal by the image. The translation contains nothing absent from the literal except marked glosses and marked insertions. If you change one, check the other.
 4. **Change lists for checks.** When checking rather than translating, return a change list (format below); do not edit. Only the coordinator writes to the master files.
 5. **Never fabricate.** No invented citations, page numbers, dates or identifications. An attribution that cannot be verified against a named source is deleted, not hedged. Every note, find or record that depends on a source gives its citation and page, and a URL or DOI where one exists, so that it can be checked against the original.
 6. **Check after every write.** Run `python3 tools/vt_check.py` on what you changed. Rebuild the book after changes and check for missing glyphs.
@@ -18,7 +18,7 @@ This repository holds a vector translation of [author, title, edition]. Read thi
 ## Terminology (binding)
 `glossary.csv` is binding. Before introducing a rendering for a term already there, use the glossary's. After any merge, count competing renderings (`vt_check.py --glossary glossary.csv`).
 
-## Register and style (readable version)
+## Register and style (translation)
 - [Register, with a pointer to the approved sample page.] [Spelling.]
 - No em or en dashes in running prose (number ranges such as pp. 7–35 are fine). Use commas or restructure.
 - Do not use: *legible/legibility*; *honest/honesty* as filler; *load-bearing*; *gestures toward/at*; *the seam*; *quietly*; *substrate*; "the tension between X and Y" as filler; "not X but Y" framing of our own; "chosen, not found" and its variants.
@@ -27,7 +27,7 @@ This repository holds a vector translation of [author, title, edition]. Read thi
 
 ## Change list format
 ```
-### readable | p. 123
+### translation | p. 123
 OLD: <exact text, matching once>
 NEW: <replacement>
 SRC: <source wording>   (terms and external checks)

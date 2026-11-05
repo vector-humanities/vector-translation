@@ -13,15 +13,15 @@ Your range runs from your first heading to the next part's first heading, wherev
 
 | Part | First heading | Approx. images | Files |
 |---|---|---|---|
-| A | | | `partA-literal.md`, `partA-readable.md` |
+| A | | | `partA-literal.md`, `partA-translation.md` |
 
 ## Models
 - Register: the approved sample page, `[path]`. Match it.
 - Literal style: `[path, section]`.
 
 ## Two outputs, section by section, literal first
-1. **Literal** (`partX-literal.md`): close, sentence by sentence, keeping the author's sentence boundaries. No glosses, no joining, no added names. Give the source word in brackets at the first use of each glossary term in each section. Translator's notes inline as [form]. This version is published with the readable text (rule 21), so write it for a reader of the source language as well as for checking.
-2. **Readable** (`partX-readable.md`): in the register of the model page. It contains only what the literal contains, except glosses in marked notes and insertions in marked brackets.
+1. **Literal** (`partX-literal.md`): close, sentence by sentence, keeping the author's sentence boundaries. No glosses, no joining, no added names. Give the source word in brackets at the first use of each glossary term in each section. Translator's notes inline as [form]. This version is published with the translation (rule 21), so write it for a reader of the source language as well as for checking.
+2. **Translation** (`partX-translation.md`): in the register of the model page. It contains only what the literal contains, except glosses in marked notes and insertions in marked brackets.
 
 ## Conventions (binding; from `conventions.md`)
 - Page markers `[p. N]` exactly where page N begins, even mid-sentence.
@@ -42,7 +42,7 @@ If you meet a term that is not in the glossary and recurs, choose a rendering, u
 
 Section titles (use exactly): [list].
 
-Headings (both versions; the book is typeset from the readable files by Vector Book): a file that opens a chapter or a text starts with one level-one heading carrying its attributes, `# Title {num="Chapter 1" orig="Original title" run="Short running head"}`; sections within it are `## N. Title`. A file with no level-one heading continues the chapter before it, so later sections of a text carry only `##` headings. A translator's note on a title goes on the heading: `# Title[^label] {…}`. Section breaks are a paragraph of `· · ·` or `* * *` alone, never `***` or `---`.
+Headings (both versions; the book is typeset from the translation files by Vector Book): a file that opens a chapter or a text starts with one level-one heading carrying its attributes, `# Title {num="Chapter 1" orig="Original title" run="Short running head"}`; sections within it are `## N. Title`. A file with no level-one heading continues the chapter before it, so later sections of a text carry only `##` headings. A translator's note on a title goes on the heading: `# Title[^label] {…}`. Section breaks are a paragraph of `· · ·` or `* * *` alone, never `***` or `---`.
 
 ## Banned (both versions)
 [Paste the list from `AGENTS.md`: dashes, words, constructions.] No commentary of your own on how important or striking something is.

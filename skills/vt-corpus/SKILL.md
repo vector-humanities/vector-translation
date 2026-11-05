@@ -23,7 +23,7 @@ Method §2a; rule 4a. Templates: `templates/corpus/`, `templates/BRIEF-corpus.md
 
 ## Uses later
 - Briefs give the glossary and the style note, never corpus texts.
-- The read-through flags passages of the readable version that match a corpus translation over more than a phrase.
+- The read-through flags passages of the translation that match a corpus translation over more than a phrase.
 - The external check and the attribution pass start from `finds.md`.
 - Translator's notes may cite a precedent ("as in X's translation, p. N"); Appendix A records the alternatives and why they were not taken.
 - New sources found later are added the same way, and the merge rerun.

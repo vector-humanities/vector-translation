@@ -8,7 +8,7 @@ description: Stage 7 of a vector translation. Hand the translation to Vector Boo
 Method §9; rule 18. Tool: Vector Book (https://github.com/vector-humanities/vector-book), called by path. Policy: its `docs/handover.md`. Keys: its `docs/config.md`; text conventions: its `docs/conventions.md`.
 
 ## Set up
-1. Copy `templates/book.toml` to the book folder root. Fill the translation tables only: `[book]` (title, subtitle, author, original title, credit line, affiliation, `credits` with edition, library and identifier, image credit, rights line, conventions note), `[sources]` (front, body = `text/readable/*.md`, back, glossary, overlays) and `[markers]` (page pattern; strip patterns for image numbers). Leave `[design]`, `[cover]`, `[back]` and `[frontispiece]` to the design side, with the starter's defaults, and `[imprint]` to the publisher (the series that takes the book); do not add it.
+1. Copy `templates/book.toml` to the book folder root. Fill the translation tables only: `[book]` (title, subtitle, author, original title, credit line, affiliation, `credits` with edition, library and identifier, image credit, rights line, conventions note), `[sources]` (front, body = `text/translation/*.md`, back, glossary, overlays) and `[markers]` (page pattern; strip patterns for image numbers). Leave `[design]`, `[cover]`, `[back]` and `[frontispiece]` to the design side, with the starter's defaults, and `[imprint]` to the publisher (the series that takes the book); do not add it.
 2. Add `*/build/` (or `build/`) to the repository's `.gitignore`. Commit `book/`.
 3. Write `HANDOVER.md` in the book folder for the design side: state of the text, what is provisional, questions. Make a `proof/` folder for corrections coming back.
 
@@ -33,16 +33,16 @@ path/to/vector-book/vbook sweep <book>
 ## Returns from the book side
 A return is `proof/return-NN.md` (format: Vector Book `docs/handover.md`, Returns; blank: `templates/return.md`). For each item R1, R2, …:
 - **MARKUP** (form of the text) and **SOURCES** (manifest, glossary, figures, files): apply.
-- **TEXT** (wording): check against the literal and the page image before applying; the literal first, the readable from it.
+- **TEXT** (wording): check against the literal and the page image before applying; the literal first, the translation from it.
 - **QUERY** and **OTHER**: put to the translator with the evidence and your recommendation; write QUERY-TO-TRANSLATOR and the date; apply the answer when it comes.
 - **LAYOUT**: NOTED.
-Apply the proposed change lists straight from the return: `python3 tools/vt_apply.py <book>/proof/return-NN.md --target readable=<file> --target literal=<file>` (dry run, then `--write`). Write the Response line under every item (FIXED with the commit and whether the literal changed, CHANGED-OTHERWISE, QUERY-TO-TRANSLATOR, DECLINED with the reason, NOTED). Then run the post-design check and `vbook check <book> --report`, commit, set the Status to ANSWERED, and tell the book side.
+Apply the proposed change lists straight from the return: `python3 tools/vt_apply.py <book>/proof/return-NN.md --target translation=<file> --target literal=<file>` (dry run, then `--write`). Write the Response line under every item (FIXED with the commit and whether the literal changed, CHANGED-OTHERWISE, QUERY-TO-TRANSLATOR, DECLINED with the reason, NOTED). Then run the post-design check and `vbook check <book> --report`, commit, set the Status to ANSWERED, and tell the book side.
 
 ## Post-design check
 `python3 tools/vt_bookcheck.py <book>` checks the typeset PDF against the translation's own text, independently of Vector Book: every word in order, every note, every heading. Run it when the translator asks, before marking a return ANSWERED, and before sign-off. With `--write` it records findings as `proof/check-NN.md`, LAYOUT items addressed to the book side, in the return format; tell the book side. Close each item after the rebuild that fixes it.
 
 ## Publication of the literal
-The book stays readable-only. The literal version is published as a file, the Markdown with its page markers, alongside the readable text in the repository and the deposit (method §9, rule 21).
+The book sets the translation only. The literal version is published as a file, the Markdown with its page markers, alongside the translation in the repository and the deposit (method §9, rule 21).
 
 ## Gates
 - **Text gate:** the translation checks pass and the translator signs off the text in `STATUS.md`; then set `handover = "final"`.

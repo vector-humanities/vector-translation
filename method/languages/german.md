@@ -20,7 +20,7 @@ Prepared before the first German vector translation. Revise from practice.
 - **Brackets for insertions.** German authors and editors use square brackets themselves. Options: keep 〔 〕 from the Kuki convention, which cannot be confused with the author's; or ⟨ ⟩; or square brackets with an editorial note. Record the choice and the reason in the Translator's Note.
 - **Emphasis.** Letter-spaced type (Sperrdruck) and italics as italics; record where the author uses both for different purposes.
 - **Quotations of German classics.** For quotations of Hegel, Marx, Kant, Goethe and others, decide between translating from the author's text and using standard English editions with references (for example the Marx-Engels Collected Works, the Cambridge Kant), noting any modification. The Kuki rule (translate from the author's text) was made for an author quoting through Japanese; a German author quoting German originals may call for the other choice.
-- **Titles and dates.** Whether titles of works are given in German with English in a note, and how references to German editions are normalised in the readable version.
+- **Titles and dates.** Whether titles of works are given in German with English in a note, and how references to German editions are normalised in the translation.
 
 ## Terms
 The existing-translation step is heavier for this tradition, and the drift risk higher: the English corpus is full of published Frankfurt School translations whose choices a model will reproduce, sometimes word for word. The glossary should record the established renderings and where translators disagree, and the translator decides. Starting entries:
@@ -43,6 +43,6 @@ The existing-translation step is heavier for this tradition, and the drift risk 
 | das Moment / der Moment | moment (element, Hegelian) / instant | the gender decides the sense; a common error |
 
 ## Syntax and register
-- Verb-final clauses, long periodic sentences, nominalisation and compounds. A close literal version is easier than from Japanese; the readable version faces the real register decision.
+- Verb-final clauses, long periodic sentences, nominalisation and compounds. A close literal version is easier than from Japanese; the translation faces the real register decision.
 - Breaking a long periodic sentence changes the argument's shape. For authors whose difficulty is part of the argument, the translator should set the register on a sample page before any agent drafts (rule 6). Over-smoothing was the main fault class on the first run (rule 7).
-- Watch for memorised wording from published translations in the readable version. It is a fidelity problem and a copyright one; the read-through brief should ask checkers to flag passages that match a published translation.
+- Watch for wording memorised from published translations appearing in our own translation. It is a fidelity problem and a copyright one; the read-through brief should ask checkers to flag passages that match a published translation.

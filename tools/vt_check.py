@@ -3,7 +3,7 @@
 
 Run after every merge and every bulk edit, whoever made it:
 
-    python3 tools/vt_check.py text/readable.md --glossary glossary.csv
+    python3 tools/vt_check.py text/translation.md --glossary glossary.csv
     python3 tools/vt_check.py text/literal.md --skip-pages 12 --no-footnotes
 
 Checks:
