@@ -237,6 +237,24 @@ h3 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-heig
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
+/* Screenshots, bench tools and the case study */
+
+.shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 28px; margin-top: 44px; }
+.shots .wide { grid-column: 1 / -1; }
+.shot { margin: 0; }
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; box-shadow: var(--shadow); background: var(--surface); }
+.shot figcaption { font-family: var(--mono); font-size: .72rem; letter-spacing: .03em; line-height: 1.55; color: var(--muted); margin-top: 10px; }
+.tools { display: grid; grid-template-columns: 120px 1fr; gap: 10px 22px; margin: 30px 0 0; font-size: .95rem; }
+.tools dt { font-family: var(--mono); font-size: .8rem; color: var(--ink); padding-top: 3px; }
+.tools dd { margin: 0; color: var(--muted); }
+.edits { list-style: none; padding: 0; margin: 28px 0 0; max-width: 46rem; }
+.edits li { padding: 18px 0; border-top: 1px solid var(--rule); font-size: .97rem; }
+.edits .loc { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; color: var(--sand); text-transform: uppercase; margin-bottom: 6px; }
+.edits .lbl { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; color: var(--muted); margin-right: 6px; }
+.edits .why { display: block; color: var(--muted); font-size: .92rem; margin-top: 6px; }
+.case-study h3 { margin-top: 56px; }
+.case-study .stats { max-width: 46rem; }
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -245,7 +263,7 @@ h3 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-heig
   .section-head { grid-template-columns: 1fr; gap: 10px; }
   .section-head .num { padding-top: 0; }
   .indent { margin-left: 0; }
-  .rules, .kits { grid-template-columns: 1fr; }
+  .rules, .kits, .shots, .tools { grid-template-columns: 1fr; }
   .case { grid-template-columns: 1fr; }
   .case .cover { border-right: none; border-bottom: 1px solid var(--rule); min-height: 280px; }
   .stats { grid-template-columns: repeat(2, 1fr); }

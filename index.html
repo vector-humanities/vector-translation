@@ -41,6 +41,8 @@
       <a class="hide-sm" href="#method">Method</a>
       <a class="hide-sm" href="#rules">Rules</a>
       <a class="hide-sm" href="#toolkit">Toolkit</a>
+      <a class="hide-sm" href="#bench">Bench</a>
+      <a class="hide-sm" href="#changes">Changes</a>
       <a class="up" href="https://vector-humanities.github.io/" title="Vector Humanities">VH&nbsp;&#8599;</a>
       <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -88,9 +90,9 @@
         <li><b>Pilot and conventions</b><span>The coordinator translates an opening section closely. The register is approved on a sample page, core terms are fixed against the corpus, and footnotes, brackets, citation form and verse are decided once.</span><em class="decides">Translator decides: register, terms, conventions</em></li>
         <li><b>Brief and batches</b><span>A shared brief for each batch; parts of about ten spreads bounded by headings; six to eight agents at a time, each writing the literal version, then the translation, then notes for the editor.</span></li>
         <li><b>Merge and integrity checks</b><span>The coordinator merges the parts in order and runs scripted checks: page markers continuous, every note defined once, banned words absent, competing renderings of each term counted. Backups before every merge.</span></li>
-        <li><b>Checking passes</b><span>Terminology; translation against literal; comparison with passages quoted in published translations and scholarship; attributions; a concordance with the standard edition. Each pass returns a change list.</span><em class="decides">Translator decides: disputed readings</em></li>
+        <li><b>Checking passes</b><span>Terminology; translation against literal; comparison with passages quoted in published translations and scholarship; attributions; a concordance with the standard edition. Each pass returns a change list, and each change records its origin: an internal check the agents ran, or a witness (a reader with the source, an earlier translation, the translator's sample review).</span><em class="decides">Translator decides: disputed readings</em></li>
         <li><b>Apparatus</b><span>A preface written from a sourced fact sheet; the Translator's Note; notes on translation choices; contents of the printing; concordance; index of persons and works; glossary; figures.</span><em class="decides">Translator decides: contents and scope</em></li>
-        <li><b>Book</b><span>Handover to <a href="https://github.com/vector-humanities/vector-book">Vector Book</a> through a <code>book.toml</code> manifest: a typeset build from the first merged chapter on, design samples, a sweep for missing glyphs, covers, proof corrections returned as change lists.</span><em class="decides">Translator decides: design and sign-off</em></li>
+        <li><b>Book</b><span>Handover to <a href="https://github.com/vector-humanities/vector-book">Vector Book</a> through a <code>book.toml</code> manifest: a typeset build from the first merged chapter on, design samples, a sweep for missing glyphs, covers. The book side sends faults back as numbered returns, answered item by item; a post-design check reads the typeset book against the translation, word by word; the text and the book are signed off separately.</span><em class="decides">Translator decides: design and sign-off</em></li>
       </ol>
       <p class="src-link indent"><a href="https://github.com/vector-humanities/vector-translation/blob/main/method/method.md">method/method.md</a></p>
     </div>
@@ -106,8 +108,10 @@
         <li><b>Translate from the images</b><span>OCR of the pre-war vertical Japanese read <span class="jp-inline">偶然</span> as <span class="jp-inline">借然</span>. It served only for searching.</span></li>
         <li><b>Survey every page first</b><span>The printed contents gave wrong section pages throughout and left out the author's own preface, which turned up at the book-design stage.</span></li>
         <li><b>Fix core terms before the pilot</b><span><span class="jp-inline">存在</span> and <span class="jp-inline">有</span> were both rendered "being", the default of the English corpus, for two chapters until an existing draft separated existence from being. The change needed a pass over the whole book.</span></li>
+        <li><b>Build a translation corpus first</b><span>On the first run, existing translations came to hand one at a time, and each changed the translation after it was drafted. For Rang, 38 sources were read before the pilot and every rendering of the author's terms tabled with its page.</span></li>
         <li><b>The translation adds nothing absent from the literal</b><span>The read-through found 116 faults, mostly added inference words, dropped hedges and moved emphasis. It now runs on each part as it returns.</span></li>
         <li><b>Never drop the literal version</b><span>It was dropped for one chapter and had to be restarted. Every later correction to the translation was found through it.</span></li>
+        <li><b>Keep witness checks apart</b><span>No check the agents ran on their own output found the existence and being drift. Change lists now record whether each change came from an internal check or from a witness, and the Translator's Note says which passages a witness has seen.</span></li>
         <li><b>Mark every addition</b><span>Translator's notes are footnotes beginning "Tr."; insertions into the author's sentences go in brackets <span class="jp-inline">〔 〕</span>.</span></li>
         <li><b>Check attributions as a pass of their own</b><span>Agents supply names and dates in notes. Any that cannot be verified against a named source is deleted.</span></li>
         <li><b>Decide conventions once</b><span>Footnotes or inline glosses, brackets, citation form and verse each changed during the first run, and each change was retrofitted across finished chapters.</span></li>
@@ -137,9 +141,9 @@
             <dt>vt-pilot</dt><dd>Pilot section, register sample, core terms, conventions</dd>
             <dt>vt-brief</dt><dd>Brief, partition, batch launch, boundary reports</dd>
             <dt>vt-merge</dt><dd>Merge and integrity checks</dd>
-            <dt>vt-check</dt><dd>Terminology, read-through, external, attribution, concordance</dd>
+            <dt>vt-check</dt><dd>Internal passes and witness checks, recorded apart</dd>
             <dt>vt-apparatus</dt><dd>Fact sheet, preface, Translator's Note, appendices, index, figures</dd>
-            <dt>vt-book</dt><dd>Typeset build, glyph sweep, covers</dd>
+            <dt>vt-book</dt><dd>Handover to Vector Book, returns, post-design check, sign-off</dd>
           </dl>
           <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/skills">skills/</a></p>
         </div>
@@ -152,7 +156,10 @@
             <dt>BRIEF-readthrough.md · BRIEF-terms.md</dt><dd>Briefs for the checking passes</dd>
             <dt>conventions.md</dt><dd>The decisions to make before the pilot</dd>
             <dt>glossary.csv</dt><dd>Binding terms, read by briefs and checks</dd>
-            <dt>change-list.md · STATUS.md</dt><dd>Correction format; dated project status</dd>
+            <dt>change-list.md · STATUS.md</dt><dd>Correction format with origin; dated project status</dd>
+            <dt>witness.md · return.md</dt><dd>A witness check; a return from the book side</dd>
+            <dt>figures.csv · book.toml</dt><dd>The figure list tools read; the manifest for Vector Book</dd>
+            <dt>corpus/</dt><dd>Sources, term tables, style note and finds</dd>
           </dl>
           <p class="src"><a href="https://github.com/vector-humanities/vector-translation/tree/main/templates">templates/</a></p>
         </div>
@@ -173,10 +180,84 @@
     </div>
   </section>
 
+  <section id="bench">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">04 · Bench</p>
+        <h2>The research bench</h2>
+      </div>
+      <div class="prose indent reveal">
+        <p>A translation is read and worked through on a research bench built from the translation template of <a href="https://github.com/critical-code-studies/bench-kit">bench-kit</a>, which reads the method's layout: page images, the literal translation, the translation, the glossary and the change lists. The first is the <a href="https://vector-humanities.github.io/kuki-bench/">Kuki bench</a>, which is public. It holds a copy of the translation at a named commit; the working repository is the master, and a correction made on the bench is saved as a change list for <code>vt_apply.py</code>, not written into the text.</p>
+        <dl class="tools">
+          <dt>Pages</dt><dd>Each page image of the 1948 printing beside the translation, with the literal translation one switch away. The library's images are two-page spreads; the bench shows the half that matches each page.</dd>
+          <dt>Glossary</dt><dd>Each source term, its renderings and where each falls, section by section. ⚠ marks an English word that renders more than one source term.</dd>
+          <dt>Changes</dt><dd>The change lists of the terminology pass and the read-through, each change at its page with the Japanese, and whether it is in the text now.</dd>
+          <dt>Search</dt><dd>A Japanese word in the library's OCR and in the translation. Old character forms are read as new, and a search can allow one character wrong, since the OCR misreads.</dd>
+          <dt>Images</dt><dd>Kuki's 22 figures, in print and archival form, with English labels set on the figure and a key under the caption.</dd>
+          <dt>Library</dt><dd>Works on the book, with ratings and annotations through a private Hypothesis group.</dd>
+        </dl>
+      </div>
+      <div class="shots indent">
+        <figure class="shot wide reveal"><img src="assets/shots/kuki-bench-pages.jpg" alt="The Kuki bench's Pages view: the page image of p. 148 of the 1948 printing on the left, the translation of that page on the right" loading="lazy" width="1600" height="1000"><figcaption>Pages: p. 148, where Kuki defines contingency as the Encounter of two independent elements, beside the page image.</figcaption></figure>
+        <figure class="shot reveal"><img src="assets/shots/kuki-bench-compare.jpg" alt="The translation and the literal translation of p. 148 side by side" loading="lazy" width="1600" height="1000"><figcaption>Compare: the translation and the literal translation, held at the same page.</figcaption></figure>
+        <figure class="shot reveal"><img src="assets/shots/kuki-bench-figure.jpg" alt="Kuki's Figure 1, a square divided by its diagonals, with English labels set beside the Japanese" loading="lazy" width="1600" height="1000"><figcaption>Images: Figure 1 (p. 77) with its English labels. A label runs along a diagonal where Kuki's characters do.</figcaption></figure>
+        <figure class="shot wide reveal"><img src="assets/shots/kuki-bench-figures.jpg" alt="A grid of Kuki's 22 figures with their page numbers" loading="lazy" width="1600" height="833"><figcaption>Images: the 22 figures, from the National Diet Library's page images.</figcaption></figure>
+      </div>
+      <p class="src-link indent"><a href="https://vector-humanities.github.io/kuki-bench/">vector-humanities.github.io/kuki-bench</a> · <a href="https://github.com/vector-humanities/kuki-bench">github.com/vector-humanities/kuki-bench</a></p>
+    </div>
+  </section>
+
+  <section id="changes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">05 · Changes</p>
+        <h2>Small changes: the Kuki record</h2>
+      </div>
+      <div class="prose indent case-study reveal">
+        <p>Most of the changes the checks made to the Kuki translation were small: a hedge, a grammatical person, a connective, an emphasis mark, a capital. Each is kept in a change list with its page, the Japanese and the reason. Page numbers are those of the 1948 printing.</p>
+
+        <h3>The read-through</h3>
+        <p>An agent compared the translation with the literal, range by range, with the page images for disputes. It is an internal check.</p>
+        <div class="stats">
+          <div><b>39</b><span>adds</span></div>
+          <div><b>58</b><span>changes</span></div>
+          <div><b>19</b><span>drops</span></div>
+          <div><b>116</b><span>fixes in all</span></div>
+        </div>
+        <p>A separate pass on the verse made 55 more.</p>
+        <ul class="edits">
+          <li><span class="loc">p. 3 · hedge</span><span class="lbl">before</span>Some will think that quantum theory takes contingency as its problem.<br><span class="lbl">after</span>Some may think that quantum theory takes contingency as its problem.<span class="why"><span class="jp-inline">考へる者があるかも知れない</span>: the hedge is Kuki's.</span></li>
+          <li><span class="loc">p. 22 · attribution</span><span class="lbl">before</span>to express necessity we must choose the generic judgement (Lotze …)<br><span class="lbl">after</span>one must choose the generic judgement (Lotze …). That is what Lotze says.<span class="why">Kuki writes <span class="jp-inline">といふのである</span>, reporting the view. With "we", it read as his own, though he goes on to reject it.</span></li>
+          <li><span class="loc">p. 33 · emphasis</span>Italics render Kuki's emphasis dots (<span class="jp-inline">圏点</span>). In one sentence italics on <i>law</i> and <i>exception</i> were removed, since the page image shows no dots on <span class="jp-inline">法則</span> or <span class="jp-inline">例外</span> there; in the next they were restored on <i>law</i>, where it does.</li>
+          <li><span class="loc">p. 38 · sense</span><span class="lbl">before</span>for the blind a dream is something heard more than seen<br><span class="lbl">after</span>is not something seen but something heard<span class="why"><span class="jp-inline">見るものではなくて聞くもの</span>: "more than" softened the claim.</span></li>
+          <li><span class="loc">p. 292 · connective</span><span class="lbl">before</span>so that as the necessary-contingent it is at once pushed away<br><span class="lbl">after</span>and which, as the necessary-contingent, is at once pushed away<span class="why">Kuki gives two coordinate predicates; "so that" made the second a result of the first.</span></li>
+          <li><span class="loc">p. 316 · inference</span>"consequently" removed from "The first quadrant (I) and the third quadrant (III) are consequently the field".<span class="why">There is no inference marker in the Japanese.</span></li>
+        </ul>
+        <figure class="shot reveal" style="margin-top:32px"><img src="assets/shots/kuki-bench-change.jpg" alt="The bench's Changes view filtered to one entry: p. 3, Some will think changed to Some may think, with the Japanese" loading="lazy" width="1600" height="333"><figcaption>Changes on the bench: the p. 3 entry, with its reason and whether it is in the text now.</figcaption></figure>
+
+        <h3>Existence and being</h3>
+        <p><span class="jp-inline">存在</span> and <span class="jp-inline">有</span> were both rendered "being", the default of English philosophical prose, for two chapters. A specialist's draft of the Introduction, made outside the run, separated them: <span class="jp-inline">存在</span> existence, <span class="jp-inline">有</span> being, <span class="jp-inline">無</span> nothingness. A terminology pass applied the decision book-wide in 67 entries across both versions. At p. 80, Cournot's <i>hasard par néant de causalité</i>, which Kuki writes <span class="jp-inline">因果性の非存在による偶然</span>, went from "the non-being of causality" to "the non-existence of causality". The pass found a clash of its own: <span class="jp-inline">實在理由</span> (<i>ratio essendi</i>) had been "ground of being", which now pointed to <span class="jp-inline">有</span>, and became "ground of reality".</p>
+        <figure class="shot reveal"><img src="assets/shots/kuki-bench-changes.jpg" alt="The bench's Changes view listing terminology-pass entries in which being became existence, each with the Japanese" loading="lazy" width="1600" height="656"><figcaption>Changes: terminology-pass entries, each with the Japanese.</figcaption></figure>
+
+        <h3>One English word for two terms</h3>
+        <p>The bench's glossary flagged three English words that each rendered two of Kuki's terms: "ground" (<span class="jp-inline">根據</span>, <span class="jp-inline">理由</span>), "encounter" (<span class="jp-inline">邂逅</span>, <span class="jp-inline">遭遇</span>) and "modality" (<span class="jp-inline">樣相</span>, <span class="jp-inline">樣相性</span>). Before a decision, agents read every page image and matched each of these English words in both versions to its Japanese; the OCR could not be used, since it reads <span class="jp-inline">根據</span> in five different wrong forms. On the printed pages <span class="jp-inline">根據</span> occurs 22 times, <span class="jp-inline">理由</span> 162, <span class="jp-inline">邂逅</span> 47, <span class="jp-inline">遭遇</span> 16, <span class="jp-inline">樣相</span> 44 and <span class="jp-inline">樣相性</span> 48. The reading also found "mode" for <span class="jp-inline">樣相</span> in five places where "mode" belongs to <span class="jp-inline">樣態</span>.</p>
+        <p>The translator decided on 9 November 2026 to keep each pair apart with a capital, which, in the Translator's Note, marks the term Kuki uses for his own metaphysical determination: <span class="jp-inline">根據</span> Ground and <span class="jp-inline">理由</span> ground; <span class="jp-inline">邂逅</span> Encounter and <span class="jp-inline">遭遇</span> encounter; <span class="jp-inline">樣相性</span> Modality and <span class="jp-inline">樣相</span> modality. Verbs (<span class="jp-inline">邂逅する</span>, <span class="jp-inline">根據づける</span>) stay lower case with the Japanese given; headings in Kuki's text went to sentence case; sentences that would have opened with a lower-case term were rewritten. Where Kuki sets the two words together, the Japanese stays beside the English, as at p. 148: "encounter or Encounter, as <i>sōgū</i> (<span class="jp-inline">遭遇</span>) or <i>kaikō</i> (<span class="jp-inline">邂逅</span>)".</p>
+        <p>Three alternatives were weighed. "Foundation" or "basis" for <span class="jp-inline">根據</span>: "basis" already renders <span class="jp-inline">基礎</span>, and Hegel's <i>Grund</i> at p. 324 would no longer read as Hegel. "Reason" for <span class="jp-inline">理由</span>: "reason" renders <span class="jp-inline">理性</span>, <i>Vernunft</i>. Italics: italics already render Kuki's emphasis dots.</p>
+        <figure class="shot reveal"><img src="assets/shots/kuki-bench-glossary.jpg" alt="The bench's Glossary filtered for ground: Ground for 根據 and ground for 理由, both flagged, with the same counts per section" loading="lazy" width="1600" height="533"><figcaption>Glossary, filtered for "ground". The ⚠ check and the counts compare words without regard to case, so Ground and ground are still flagged and counted together; Bench Kit has been asked to tell them apart.</figcaption></figure>
+
+        <h3>The OCR</h3>
+        <p>The National Diet Library's OCR of the pre-war vertical text reads <span class="jp-inline">偶然</span> as <span class="jp-inline">借然</span> and <span class="jp-inline">必ず</span> as <span class="jp-inline">流す</span>. It is kept for searching only, and even search fails for some terms: finding every <span class="jp-inline">根據</span> meant reading every page image.</p>
+
+        <h3>Source words in the literal</h3>
+        <p>The published literal is to give the Japanese at the first use of each glossary term in each section (rule 21), in square brackets, since <span class="jp-inline">〔 〕</span> already marks the translator's insertions. For Kuki that is about 590 first uses across 53 sections, each to be checked on the page images. It has not yet been applied.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="kuki">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="num">04 · First case</p>
+        <p class="num">06 · First case</p>
         <h2>Kuki Shūzō, <i>The Problem of Contingency</i></h2>
       </div>
       <article class="case reveal">
@@ -200,8 +281,8 @@
             <div><b>250</b><span>pages, typeset book</span></div>
             <div><b>4.8M</b><span>tokens of background agent work</span></div>
           </div>
-          <p>Being checked against the <i>Kuki Shūzō zenshū</i> and Omodaka Hisayuki's French translation (1966).</p>
-          <p><a href="https://vector-humanities.github.io/#projects">The project at Vector Humanities</a></p>
+          <p>To be checked against the <i>Kuki Shūzō zenshū</i> and Omodaka Hisayuki's French translation (1966).</p>
+          <p><a href="https://vector-humanities.github.io/kuki-bench/">The research bench</a> · <a href="https://vector-humanities.github.io/#projects">The project at Vector Humanities</a></p>
         </div>
       </article>
     </div>
@@ -210,7 +291,7 @@
   <section id="next">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="num">05 · Next</p>
+        <p class="num">07 · Next</p>
         <h2>Florens Christian Rang</h2>
       </div>
       <article class="case reveal">
@@ -230,7 +311,7 @@
             <div><b>25,000</b><span>words (about)</span></div>
             <div><b>1909, 1914</b><span>written</span></div>
           </div>
-          <p>Translated from the page images of the 1927/28 printing, which are in the public domain. The first run with a translation corpus before the pilot, and with the book handed to Vector Book from the first section on. Source survey done; corpus under way; the pilot section is with the translator.</p>
+          <p>Translated from the page images of the 1927/28 printing, which are in the public domain. The first run with a translation corpus before the pilot, and with the book handed to Vector Book from the first section on. Source survey done. The translation corpus was built from 38 sources by ten agents, with 1,620 renderings of Rang's terms tabled by page. The pilot section, the core terms and the conventions are with the translator.</p>
           <p><a href="https://archive.org/details/die-kreatur_1927-1928_2"><i>Die Kreatur</i> 2 at the Internet Archive</a> · <a href="https://github.com/vector-humanities/vector-translation/blob/main/method/languages/german.md">Notes for German sources</a></p>
         </div>
       </article>
