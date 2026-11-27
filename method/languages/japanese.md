@@ -10,7 +10,8 @@ From the Kuki translation (pre-war Iwanami printing, vertical text, old orthogra
 ## Images
 - The National Diet Library Digital Collections serve full-resolution spreads through IIIF and return any region: `https://dl.ndl.go.jp/api/iiif/<pid>/R<7-digit image number>/<x>,<y>,<w>,<h>/full/0/default.jpg`. Low resolution is enough for reading; use regions for figures and doubtful characters. Credit: 国立国会図書館 National Diet Library, JAPAN.
 - Each image is a two-page spread. Read the right page first, columns right to left. The mapping from image (コマ) to printed page is a formula of the form: odd page p is the left page of image (p+a)/2, even page p the right page of image (p+a+1)/2. Work out *a* from two pages and test it on a third.
-- OCR of pre-war vertical text is unusable as a source (rule 1). Keep it for searching.
+- OCR of pre-war vertical text is unusable as a source (rule 1). Keep it for searching. A tesseract OCR read the columns as horizontal lines; the National Diet Library's own full-text search finds passages its downloadable OCR does not give; a positional reading by macOS Vision is far better for search (method §2), though it misreads single pre-war forms (的 as 約, 龜 as 絶) and Latin.
+- Old character forms (樣, 據, 獨) are kept as printed in quotations of the Japanese; search should read old forms as new.
 
 ## Conventions used for Kuki
 - Page markers `[p. N]`; image markers `[コマ N]` beside the first page marker on each spread.

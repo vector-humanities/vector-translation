@@ -26,3 +26,6 @@ Read the dry run. Refused entries (no match or several) go back to the checker o
 
 ## Disputes
 Where a checker and the draft disagree on a reading, look at the image yourself. If it is still unclear, put it to the translator with the source text, both readings and your view.
+
+## Page reading (after the other passes)
+Readers with a block of pages each read both versions against the page images (method §7.6; rules 22, 23): errors of meaning shared by the two versions, English words standing for more than one source term, glossary departures, citations, romanisation, leftover working text. Merge their lines into one change list; the translator decides; check each change on the scan before applying it. Look at every doubtful reading again on the full-resolution image, and match symbols to the print by shape (rule 24). Run `vt_check.py --glossary` for shared renderings (SHARED) and pairs kept apart by case (CASE).

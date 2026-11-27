@@ -22,5 +22,8 @@ Settle every item before the first batch (rule 11). The translator decides; reco
 | 16 | Footnote labels | `[^c3s8-4]` (chapter, section, number) | | | |
 | 17 | Figures | crop source, cleaning, caption form, English key or overlays | | | Kuki: uncleaned crops, English key, overlays where space allows |
 | 18 | Banned constructions and words | the list in `AGENTS.md` | | | |
-| 19 | Publication of the literal version | a file, the Markdown with its page markers, alongside the translation in the repository and the deposit (rule 21); facing pages a later option | | | Kuki: held in the private repository, not yet published |
+| 19 | Publication of the literal version | a file, the Markdown with its page markers, alongside the translation in the repository and the deposit (rule 21); facing pages a later option | | | Kuki: on the public research bench |
 | 20 | Source words in the literal | in brackets at the first use of each glossary term in each section (rule 21); a bracket form different from row 5 (insertions), e.g. [ ] if insertions are 〔 〕 or ⟨ ⟩; if insertions are [ ], choose another form | | | |
+| 21 | English words shared by two source terms | a distinct word for each; a capital for the author's own term; the source word beside the English where the author pairs them; the shared words that remain listed in the Translator's Note (rule 22) | | | Kuki: capitals for Ground, Encounter, Modality; distinct words elsewhere; "determine" still shared |
+| 22 | Front matter and page numbers | roman front matter, the author's text from page 1; order of Translator's Preface, Translator's Note, Chronology; epigraph | | | Kuki: roman, text from p. 1; gravestone epigraph |
+| 23 | Concordance with the standard edition | in the book once checked against that edition; otherwise in the repository, with the overall correspondence in the Translator's Preface | | | Kuki: kept in the repository |

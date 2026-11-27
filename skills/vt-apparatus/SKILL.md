@@ -30,3 +30,10 @@ Not part of the book. It is published as a file, the Markdown with its page mark
 
 ## Figures
 A sub-agent finds every figure from the contact sheet, crops each at full resolution (IIIF region where available), applies a gentle contrast curve that keeps marks, and writes one row per figure to `figures/figures.csv` (copy `templates/figures.csv`; columns `n,file,original,page,image,region,overlays,placement,labels_note`, defined in method §8). The draft caption and English key go in the translation as the `**Figure N.**` line after the image, not in the list. Measure label positions for English overlays at this stage, at the book's type size, and write them to `figures/overlays.json` (format: bench-kit `docs/figure-labels.md`). Processing notes may go in `figures/FIGURES.md` as prose; tools read only the CSV. The author's own references to figures stay as written, with the figure number added in the insertion brackets. Credit the image source as the library requires.
+
+## Notes, Translator's Note, chronology, concordance
+- Check notes against primary sources and printed editions, read in page images; resolve each doubt or state what is not known (rule 25).
+- The Translator's Note is the only place that discusses the two versions; it lists the English words still shared by two source terms (rule 22).
+- A chronology of the author from the fact sheet, sourced where only one source gives a fact.
+- The concordance goes in the book only once checked against the standard edition; otherwise the Translator's Preface gives the overall correspondence.
+- Edit the masters; appendix files outside them are copies (rule 26).

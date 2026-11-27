@@ -13,7 +13,11 @@ Checks:
   banned     em and en dashes (an en dash between digits is allowed) and the
              banned words and constructions (built-in list, extendable with --banned)
   glossary   for each glossary row, counts of the agreed English and of each
-             listed competitor, to show drift
+             listed competitor, to show drift; then any English rendering
+             given for more than one source term. Renderings that differ only
+             by case (Ground, ground) are reported as kept apart by case and
+             counted case-sensitively, so a translation that marks a term with
+             a capital must not open a sentence with the lower-case term.
 
 Exit status 1 if pages, footnotes or banned report a fault. Glossary counts are
 information only. Standard library only.
@@ -100,22 +104,59 @@ def check_banned(text, extra):
     return faults, warnings
 
 
-def count(text, phrase):
+def count(text, phrase, case=False):
     phrase = phrase.strip()
     if not phrase:
         return 0
-    return len(re.findall(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.I))
+    return len(re.findall(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, 0 if case else re.I))
 
 
-def glossary_report(text, path):
-    rows = []
+def renderings(eng):
+    """The English renderings in a glossary cell: notes in brackets dropped,
+    alternatives split on ';'."""
+    eng = re.sub(r"\([^)]*\)", "", eng)
+    return [e.strip() for e in eng.split(";") if e.strip()]
+
+
+def read_glossary(path):
     with open(path, newline="", encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            eng = r.get("english", "")
-            comp = [c for c in r.get("competitors", "").split(";") if c.strip()]
-            rows.append((r.get("source", ""), eng, count(text, eng),
-                         [(c.strip(), count(text, c)) for c in comp]))
-    return rows
+        return list(csv.DictReader(f))
+
+
+def cased(rows):
+    """Lower-cased renderings that the glossary gives in more than one case."""
+    forms = {}
+    for r in rows:
+        for e in renderings(r.get("english", "")):
+            forms.setdefault(e.lower(), set()).add(e)
+    return {k for k, v in forms.items() if len(v) > 1}
+
+
+def glossary_report(text, rows):
+    case = cased(rows)
+    out = []
+    for r in rows:
+        eng = r.get("english", "")
+        first = (renderings(eng) or [eng])[0]
+        comp = [c for c in r.get("competitors", "").split(";") if c.strip()]
+        out.append((r.get("source", ""), first, count(text, first, first.lower() in case),
+                    [(c.strip(), count(text, c, c.strip().lower() in case)) for c in comp]))
+    return out
+
+
+def shared_renderings(rows):
+    """English renderings given for more than one source term, and those kept
+    apart only by case."""
+    by = {}
+    for r in rows:
+        for e in renderings(r.get("english", "")):
+            by.setdefault(e, []).append(r.get("source", ""))
+    shared = {e: s for e, s in by.items() if len(set(s)) > 1}
+    lower = {}
+    for e, s in by.items():
+        lower.setdefault(e.lower(), []).append((e, s))
+    by_case = {k: v for k, v in lower.items() if len(v) > 1}
+    return shared, by_case
 
 
 def main():
@@ -168,10 +209,16 @@ def main():
             print(f"  WARN  {w}")
         bad |= bool(faults)
         if args.glossary:
+            rows = read_glossary(args.glossary)
             print("glossary: agreed rendering, then competitors")
-            for src, eng, n, comp in glossary_report(text, args.glossary):
+            for src, eng, n, comp in glossary_report(text, rows):
                 extra = ", ".join(f"{c} {k}" for c, k in comp if k)
                 print(f"  {src}  {eng} {n}" + (f"  | {extra}" if extra else ""))
+            shared, by_case = shared_renderings(rows)
+            for e, srcs in sorted(shared.items()):
+                print(f"  SHARED  {e!r} renders {', '.join(sorted(set(srcs)))}")
+            for k, forms in sorted(by_case.items()):
+                print("  CASE    " + "; ".join(f"{e!r} {', '.join(s)}" for e, s in forms) + " (counted case-sensitively)")
     return 1 if bad else 0
 
 

@@ -49,3 +49,6 @@ The book sets the translation only. The literal version is published as a file, 
 - **Book gate:** `BUILD.md` clean, the latest post-design check with no open findings, every return and check in `proof/` CLOSED, then the translator signs off the book. The sign-off in `STATUS.md` records the date, the Vector Book commit from `BUILD.md` and the PDF, so that the signed-off book can be rebuilt exactly.
 
 When a `check-NN.md` with findings is opened, tell the book side; it writes the Response lines and rebuilds, and you close each item.
+
+## Front matter
+Translator's Preface, Translator's Note and Chronology in roman numerals, the author's text from page 1 (Vector Book `book.main-matter`); an optional epigraph page (`[epigraph]`).

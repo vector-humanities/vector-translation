@@ -20,9 +20,9 @@ Vector translation borrows a working comparison from software reverse engineerin
 | | |
 |---|---|
 | [`method/method.md`](method/method.md) | The procedure, stage by stage, with a checklist |
-| [`method/rules.md`](method/rules.md) | Twenty-two rules, each with the incident behind it |
+| [`method/rules.md`](method/rules.md) | Twenty-seven rules, each with the incident behind it |
 | [`method/languages/`](method/languages/) | Notes for [Japanese](method/languages/japanese.md) and [German](method/languages/german.md) sources |
-| [`method/case-kuki.md`](method/case-kuki.md) | The first run, in figures |
+| [`method/case-kuki.md`](method/case-kuki.md) | The first run and its November revision, in figures |
 | [`skills/`](skills/) | Claude Code skills: a coordinator and one per stage |
 | [`templates/`](templates/) | Briefs, conventions sheet, glossary, survey, fact sheet, status, project `AGENTS.md`, Vector Book `book.toml` |
 | [`tools/`](tools/) | `vt_check.py`, `vt_apply.py`, `vt_assemble.py`, `vt_corpus.py`, `vt_bookcheck.py` (Python 3, standard library only; the book check needs `pdftotext`) |
@@ -37,7 +37,7 @@ Vector translation borrows a working comparison from software reverse engineerin
 | 2 | Pilot and conventions: pilot section, register page, core terms, decision sheet, glossary | `vt-pilot` | register, terms, every convention |
 | 3 | Brief and batches: partition by headings, shared brief, parallel drafting | `vt-brief` | partition, hard passages |
 | 4 | Merge and integrity checks, per part as it returns | `vt-merge` | new terms |
-| 5 | Checking passes: read-through, terms, attributions, external check, concordance | `vt-check` | disputed readings |
+| 5 | Checking passes: read-through, terms, attributions, witness checks, concordance, and a page reading of both versions against the images | `vt-check` | disputed readings, separations of shared words |
 | 6 | Apparatus: preface from a fact sheet, Translator's Note, appendices, figures | `vt-apparatus` | scope and contents |
 | 7 | Book: handover to [Vector Book](https://github.com/vector-humanities/vector-book) through `book.toml`, builds from the first chapter, design samples, proof | `vt-book` | design, sign-off |
 
@@ -55,11 +55,15 @@ python3 tools/vt_apply.py fixes-*.md --target translation=text/translation.md --
 python3 tools/vt_assemble.py text/translation --front front --back back -o build/translation.md
 ```
 
-`vt_apply.py` is a dry run unless given `--write`, and refuses any change whose old text does not match exactly once.
+`vt_apply.py` is a dry run unless given `--write`, and refuses any change whose old text does not match exactly once. `vt_check.py --glossary` counts each term's rendering and its competitors, reports any English rendering given for more than one source term, and counts renderings that differ only by case (Ground, ground) separately.
+
+## Research bench
+
+A translation is read and worked through on a research bench built from [bench-kit](https://github.com/critical-code-studies/bench-kit)'s translation template, which reads this method's layout: page images beside the translation and the literal translation, the glossary with every place each rendering falls, the change lists, search and the figures. The first is the [Kuki bench](https://vector-humanities.github.io/kuki-bench/).
 
 ## Status
 
-Version 0.1.1, October 2026, distilled from one complete run. A German text from the Frankfurt School or its circle, in the public domain and not yet translated into English, is in preparation as the second.
+Version 0.1.2, November 2026, distilled from one complete run, Kuki, and its revision in November (rules 22 to 26; see `CHANGELOG.md`). The second, from German, is Florens Christian Rang's essay on carnival and his letter to Walther Rathenau (*Die Kreatur* 2, 1927/28): source survey and translation corpus done, the pilot with the translator.
 
 ## Citation
 
