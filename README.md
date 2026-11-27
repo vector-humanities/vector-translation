@@ -67,7 +67,7 @@ Version 0.1.2, November 2026, distilled from one complete run, Kuki, and its rev
 
 ## Citation
 
-Berry, D. M. (2026) *Vector Translation: a method for translating books from page images with AI agents*. Version 0.1.1. Zenodo. https://doi.org/10.5281/zenodo.23715275
+Berry, D. M. (2026) *Vector Translation: a method for translating books from page images with AI agents*. Version 0.1.2. Zenodo. https://doi.org/10.5281/zenodo.24593365
 
 To cite every version, use the concept DOI, https://doi.org/10.5281/zenodo.23715274. `CITATION.cff` gives the same record for GitHub's "Cite this repository".
 
